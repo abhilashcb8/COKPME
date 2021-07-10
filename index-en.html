@@ -1,0 +1,3286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>COKPME - COVID19 Ontology for analysing Karnataka Private Medical Establishment data</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://www.iiitdwd.ac.in/ACB/COKPME","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://www.iiitdwd.ac.in/ACB/COKPME","name":"COKPME - COVID19 Ontology for analysing Karnataka Private Medical Establishment data", "headline":"This is for analyzing the wave 2 of COVID19. Dateset - Anonymised sample data for testing the ontology. This is the evaluation version.The ontology will be used by analysts for finding the relative and precautionary measures that can be put in action for controlling the spread. Also, it should be able to handle the competence question like:  Which properties of the patient should be considered for modeling Which properties of patient changes Which properties of patient confirm COVID positive Do the symptom of the patient change over a time *** Do the treatment provided depends on the category of patient Do other comorbid conditions derive any interestingness **** Which symptom is high in a particular district? (Or) Does the geographical location influence the patient category These keep change over an iterative process of ontology development", "datePublished":"Fri Jul 09 22:45:26 IST 2021", "version":"1.0", "author":[{"@type":"Person","name":"Abhilash C B (IIIT Dharwad)"},{"@type":"Person","name":"Kavi Mahesh (IIIT Dharwad)"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>COKPME - COVID19 Ontology for analysing Karnataka Private Medical Establishment data</h1>
+
+
+<dl>
+<dt>Latest version:</dt>
+<dd><a href="http://www.iiitdwd.ac.in/ACB/COKPME">http://www.iiitdwd.ac.in/ACB/COKPME</a></dd>
+<dt>Revision:</dt>
+<dd>1.0</dd>
+<dt>Authors:</dt>
+<dd>Abhilash C B (IIIT Dharwad)</dd><dd>Kavi Mahesh (IIIT Dharwad)</dd>
+
+<dt>Publisher:</dt>
+<dd>IIIT Dharwad</dd>
+<dt>Imported Ontologies:</dt>
+<dd><a href="http://purl.org/NET/dc_owl2dl/dcam">dcam</a></dd><dd><a href="http://purl.org/NET/dc_owl2dl/elements">elements</a></dd><dd><a href="http://purl.org/NET/dc_owl2dl/terms">terms</a></dd><dd><a href="http://www.w3.org/2004/02/skos/core">core</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.xml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://insertlicenseURIhere.org" target="_blank"><img src="https://img.shields.io/badge/License-Creative%20Commons%20Attribution%204.0-blue.svg" alt="http://insertlicenseURIhere.org" /></a>
+<a href="http://insertlicenseURIhere.org" rel="license" target="_blank">
+<img src="<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>." style="border-width:0" alt="License" />
+</a>
+<br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<dt>Evaluation:</dt><dd><a href="OOPSEvaluation/OOPSeval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd><dt>Cite as:</dt>
+<dd>Abhilash C B (IIIT Dharwad),Kavi Mahesh (IIIT Dharwad). COKPME - COVID19 Ontology for analysing Karnataka Private Medical Establishment data. Revision: 1.0.</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+This is for analyzing the wave 2 of COVID19. 
+
+Dateset - Anonymised sample data for testing the ontology. 
+
+This is the evaluation version.
+
+The ontology will be used by analysts for finding the relative and precautionary measures that can be put in action for controlling the spread. Also, it should be able to handle the competence question like: 
+ Which properties of the patient should be considered for modeling
+ Which properties of patient changes
+ Which properties of patient confirm COVID positive
+ Do the symptom of the patient change over a time ***
+ Do the treatment provided depends on the category of patient
+ Do other comorbid conditions derive any interestingness ****
+ Which symptom is high in a particular district? (Or) Does the geographical location influence the patient category 
+These keep change over an iterative process of ontology development</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>[Ontology NS Prefix]</b></td><td>&lt;http://www.iiitdwd.ac.in/ACB/COKPME&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
+<tr><td><b>skos</b></td><td>&lt;http://www.w3.org/2004/02/skos/core&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
+<tr><td><b>foaf1</b></td><td>&lt;http://www.iiitdwd.ac.in/ACB/COKPMEfoaf:&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
+<tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>time</b></td><td>&lt;http://www.w3.org/2006/time&gt;</td></tr>
+<tr><td><b>foaf</b></td><td>&lt;http://xmlns.com/foaf/0.1&gt;</td></tr>
+<tr><td><b>K-COVID19-2</b></td><td>&lt;http://www.iiitdwd.ac.in/ACB/K-COVID19-2&gt;</td></tr>
+<tr><td><b>dc</b></td><td>&lt;http://purl.org/dc/elements/1.1&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">COVID19 ontology for KARNATAKA PRIVATE MEDICAL ESTABLISHMENTS - KPME. 
+The Ontology captures the attributes capted in all the private clinics of karnataka state for analysis teh pandemic situation.: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#http://www.w3.org/2006/time#DateTimeDescription" title="http://www.w3.org/2006/time#DateTimeDescription">AdmittedDate</a>
+   </li>
+   <li>
+      <a href="#Age" title="http://www.iiitdwd.ac.in/ACB/COKPME#Age">Age</a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/Agent" title="http://xmlns.com/foaf/0.1/Agent">Agent</a>
+   </li>
+   <li>
+      <a href="#ClinicalFindings"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#ClinicalFindings">Clinical findings</a>
+   </li>
+   <li>
+      <a href="#ComorbidityCondition"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition">Comorbidity Condition</a>
+   </li>
+   <li>
+      <a href="#COVID-19_Suspect"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect">COVID19Suspect</a>
+   </li>
+   <li>
+      <a href="#COVID19Suspect"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect">
+         <span>COVIDTest</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Diagnosis" title="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis">Diagnosis</a>
+   </li>
+   <li>
+      <a href="#District" title="http://www.iiitdwd.ac.in/ACB/COKPME#District">District</a>
+   </li>
+   <li>
+      <a href="#Hospital" title="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital">
+         <span>hospital</span>
+      </a>
+   </li>
+   <li>
+      <a href="#HospitalAddress"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#HospitalAddress">HospitalAddress</a>
+   </li>
+   <li>
+      <a href="#ID" title="http://www.iiitdwd.ac.in/ACB/COKPME#ID">ID</a>
+   </li>
+   <li>
+      <a href="#ILI_category" title="http://www.iiitdwd.ac.in/ACB/COKPME#ILI_category">ILI</a>
+   </li>
+   <li>
+      <a href="#Influenza_Like_Illness"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness">InfluenzaLikeIllness</a>
+   </li>
+   <li>
+      <a href="#Location" title="http://www.iiitdwd.ac.in/ACB/COKPME#Location">
+         <span>location</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Name" title="http://www.iiitdwd.ac.in/ACB/COKPME#Name">
+         <span>name</span>
+      </a>
+   </li>
+   <li>
+      <a href="#OtherComorbidityCondition"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+   </li>
+   <li>
+      <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+   </li>
+   <li>
+      <a href="#PatientAddress"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress">PatientAddress</a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">Person</a>
+   </li>
+   <li>
+      <a href="#Phone" title="http://www.iiitdwd.ac.in/ACB/COKPME#Phone">Phone</a>
+   </li>
+   <li>
+      <a href="#PID" title="http://www.iiitdwd.ac.in/ACB/COKPME#PID">PID</a>
+   </li>
+   <li>
+      <a href="#SARI_category"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#SARI_category">SARI</a>
+   </li>
+   <li>
+      <a href="#Sever_Acute_Respiratory_Infection"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection">SeverAcuteRespiratoryInfection</a>
+   </li>
+   <li>
+      <a href="#Treatment" title="http://www.iiitdwd.ac.in/ACB/COKPME#Treatment">Treatment</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#diagnoisedFor" title="http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor">diagnoisedFor</a>
+   </li>
+   <li>
+      <a href="#hasPAddress" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasPAddress">
+         <span>has p address</span>
+      </a>
+   </li>
+   <li>
+      <a href="#hasPhoneN" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN">
+         <span>has phone n</span>
+      </a>
+   </li>
+   <li>
+      <a href="#hasAdmittedPatient"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedPatient">hasAdmittedPatient</a>
+   </li>
+   <li>
+      <a href="#hasAdmittedTo" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo">hasAdmittedTo</a>
+   </li>
+   <li>
+      <a href="#hasCategory" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory">hasCategory</a>
+   </li>
+   <li>
+      <a href="#hasDiagnoisedFor"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor">hasDiagnoisedFor</a>
+   </li>
+   <li>
+      <a href="#hasdistrict" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasdistrict">hasDistrict</a>
+   </li>
+   <li>
+      <a href="#hasPID" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasPID">hasPID</a>
+   </li>
+   <li>
+      <a href="#hasSymptom" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasSymptom">hasSymptom</a>
+   </li>
+   <li>
+      <a href="#isDiagnoisedFor"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor">Is Diagnoised For</a>
+   </li>
+   <li>
+      <a href="#isLocatedAt" title="http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt">
+         <span>is located at</span>
+      </a>
+   </li>
+   <li>
+      <a href="#isAdmittedTo" title="http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo">isAdmittedTo</a>
+   </li>
+   <li>
+      <a href="#otherComorbidConditions"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions">otherComorbidConditions</a>
+   </li>
+   <li>
+      <a href="#reported_On" title="http://www.iiitdwd.ac.in/ACB/COKPME#reported_On">reportedOn</a>
+   </li>
+   <li>
+      <a href="#sufferFrom" title="http://www.iiitdwd.ac.in/ACB/COKPME#sufferFrom">sufferFrom</a>
+   </li>
+   <li>
+      <a href="#treatmentProvided"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#treatmentProvided">
+         <span>treatment provided</span>
+      </a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#address" title="http://www.iiitdwd.ac.in/ACB/COKPME#address">address</a>
+   </li>
+   <li>
+      <a href="#addressLocality"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#addressLocality">addressLocality</a>
+   </li>
+   <li>
+      <a href="#area" title="http://www.iiitdwd.ac.in/ACB/COKPME#area">
+         <span>area</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Call_to_Emergency_108_for_Covid-19_testing"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing">
+         <span>Call_to_Emergency_108_for_Covid-19_testing</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2006/time#day" title="http://www.w3.org/2006/time#day">
+         <span>day</span>
+      </a>
+   </li>
+   <li>
+      <a href="#district" title="http://www.iiitdwd.ac.in/ACB/COKPME#district">district</a>
+   </li>
+   <li>
+      <a href="#foaf:age" title="http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age">foaf:age</a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/name" title="http://xmlns.com/foaf/0.1/name">foaf:name</a>
+   </li>
+   <li>
+      <a href="#hasPhone" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone">hasPhone</a>
+   </li>
+   <li>
+      <a href="#hospitalCode" title="http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode">HID</a>
+   </li>
+   <li>
+      <a href="#Medicines_prescribed_with_home_quarantine_advice"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#Medicines_prescribed_with_home_quarantine_advice">Medicines_prescribed_with_home_quarantine_advice</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2006/time#month" title="http://www.w3.org/2006/time#month">
+         <span>month</span>
+      </a>
+   </li>
+   <li>
+      <a href="#hasID" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasID">PID</a>
+   </li>
+   <li>
+      <a href="#postalCode" title="http://www.iiitdwd.ac.in/ACB/COKPME#postalCode">
+         <span>postal code</span>
+      </a>
+   </li>
+   <li>
+      <a href="#reportedDate" title="http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate">reportDate</a>
+   </li>
+   <li>
+      <a href="#Shift_to_other_hospital"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#Shift_to_other_hospital">Shift_to_other_hospital</a>
+   </li>
+   <li>
+      <a href="#streetAddress"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#streetAddress">
+         <span>street address</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2006/time#year" title="http://www.w3.org/2006/time#year">
+         <span>year</span>
+      </a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#2147483647" title="http://www.iiitdwd.ac.in/ACB/COKPME#2147483647">2147483647</a>
+   </li>
+   <li>
+      <a href="#ASYMPTOMATIC"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#ASYMPTOMATIC">
+         <span>a s y m p t o m a t i c</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Acidity" title="http://www.iiitdwd.ac.in/ACB/COKPME#Acidity">
+         <span>acidity</span>
+      </a>
+   </li>
+   <li>
+      <a href="#AcuteRespiratoryDistressSyndrome"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#AcuteRespiratoryDistressSyndrome">
+         <span>acute respiratory distress syndrome</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Anemia" title="http://www.iiitdwd.ac.in/ACB/COKPME#Anemia">
+         <span>anemia</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Breathlessness"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#Breathlessness">
+         <span>breathlessness</span>
+      </a>
+   </li>
+   <li>
+      <a href="#BronchialAsthma"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#BronchialAsthma">
+         <span>bronchial asthma</span>
+      </a>
+   </li>
+   <li>
+      <a href="#COPD" title="http://www.iiitdwd.ac.in/ACB/COKPME#COPD">
+         <span>c o p d</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Cold" title="http://www.iiitdwd.ac.in/ACB/COKPME#Cold">
+         <span>cold</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Cough" title="http://www.iiitdwd.ac.in/ACB/COKPME#Cough">
+         <span>cough</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DIARRHOEA" title="http://www.iiitdwd.ac.in/ACB/COKPME#DIARRHOEA">
+         <span>d i a r r h o e a</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Diabetic" title="http://www.iiitdwd.ac.in/ACB/COKPME#Diabetic">
+         <span>diabetic</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DryCough" title="http://www.iiitdwd.ac.in/ACB/COKPME#DryCough">
+         <span>dry cough</span>
+      </a>
+   </li>
+   <li>
+      <a href="#ExpectorationBreathlessness"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#ExpectorationBreathlessness">
+         <span>expectoration breathlessness</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Fever" title="http://www.iiitdwd.ac.in/ACB/COKPME#Fever">
+         <span>fever</span>
+      </a>
+   </li>
+   <li>
+      <a href="#FeverCough" title="http://www.iiitdwd.ac.in/ACB/COKPME#FeverCough">
+         <span>fever cough</span>
+      </a>
+   </li>
+   <li>
+      <a href="#FeverCoughWheezing"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#FeverCoughWheezing">
+         <span>fever cough wheezing</span>
+      </a>
+   </li>
+   <li>
+      <a href="#FeverWeaknessBodyacheEpigastricPain"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessBodyacheEpigastricPain">
+         <span>fever weakness bodyache epigastric pain</span>
+      </a>
+   </li>
+   <li>
+      <a href="#FeverWeaknessPainAbdomen"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessPainAbdomen">
+         <span>fever weakness pain abdomen</span>
+      </a>
+   </li>
+   <li>
+      <a href="#forCovidTest"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#forCovidTest">
+         <span>for covid test</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Heart_Disease"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#Heart_Disease">
+         <span>heart disease</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Hypertension"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#Hypertension">
+         <span>hypertension</span>
+      </a>
+   </li>
+   <li>
+      <a href="#HypoThyorid" title="http://www.iiitdwd.ac.in/ACB/COKPME#HypoThyorid">
+         <span>hypo thyorid</span>
+      </a>
+   </li>
+   <li>
+      <a href="#ILI" title="http://www.iiitdwd.ac.in/ACB/COKPME#ILI">
+         <span>i l i</span>
+      </a>
+   </li>
+   <li>
+      <a href="#LooseStoolsAssoicatedWithFever"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#LooseStoolsAssoicatedWithFever">
+         <span>loose stools assoicated with fever</span>
+      </a>
+   </li>
+   <li>
+      <a href="#NIL" title="http://www.iiitdwd.ac.in/ACB/COKPME#NIL">
+         <span>n i l</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Other" title="http://www.iiitdwd.ac.in/ACB/COKPME#Other">
+         <span>other</span>
+      </a>
+   </li>
+   <li>
+      <a href="#PNEUMONIA" title="http://www.iiitdwd.ac.in/ACB/COKPME#PNEUMONIA">
+         <span>p n e u m o n i a</span>
+      </a>
+   </li>
+   <li>
+      <a href="#PneumoniawithLRTI"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#PneumoniawithLRTI">
+         <span>pneumoniawith l r t i</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Screaming" title="http://www.iiitdwd.ac.in/ACB/COKPME#Screaming">
+         <span>screaming</span>
+      </a>
+   </li>
+   <li>
+      <a href="#ViralFever" title="http://www.iiitdwd.ac.in/ACB/COKPME#ViralFever">
+         <span>viral fever</span>
+      </a>
+   </li>
+   <li>
+      <a href="#XXXX00000001"
+         title="http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001">
+         <span>x x x x00000001</span>
+      </a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">COVID19 ontology for KARNATAKA PRIVATE MEDICAL ESTABLISHMENTS - KPME. 
+The Ontology captures the attributes capted in all the private clinics of karnataka state for analysis teh pandemic situation.: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross reference for COVID19 ontology for KARNATAKA PRIVATE MEDICAL ESTABLISHMENTS - KPME. 
+The Ontology captures the attributes capted in all the private clinics of karnataka state for analysis teh pandemic situation. classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by COVID19 ontology for KARNATAKA PRIVATE MEDICAL ESTABLISHMENTS - KPME. 
+The Ontology captures the attributes capted in all the private clinics of karnataka state for analysis teh pandemic situation..
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://www.w3.org/2006/time#DateTimeDescription" title="http://www.w3.org/2006/time#DateTimeDescription">AdmittedDate</a>
+      </li>
+      <li>
+         <a href="#Age" title="http://www.iiitdwd.ac.in/ACB/COKPME#Age">Age</a>
+      </li>
+      <li>
+         <a href="#http://xmlns.com/foaf/0.1/Agent" title="http://xmlns.com/foaf/0.1/Agent">Agent</a>
+      </li>
+      <li>
+         <a href="#ClinicalFindings"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#ClinicalFindings">Clinical findings</a>
+      </li>
+      <li>
+         <a href="#ComorbidityCondition"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition">Comorbidity Condition</a>
+      </li>
+      <li>
+         <a href="#COVID-19_Suspect"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect">COVID19Suspect</a>
+      </li>
+      <li>
+         <a href="#COVID19Suspect"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect">
+            <span>COVIDTest</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Diagnosis" title="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis">Diagnosis</a>
+      </li>
+      <li>
+         <a href="#District" title="http://www.iiitdwd.ac.in/ACB/COKPME#District">District</a>
+      </li>
+      <li>
+         <a href="#Hospital" title="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital">
+            <span>hospital</span>
+         </a>
+      </li>
+      <li>
+         <a href="#HospitalAddress"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#HospitalAddress">HospitalAddress</a>
+      </li>
+      <li>
+         <a href="#ID" title="http://www.iiitdwd.ac.in/ACB/COKPME#ID">ID</a>
+      </li>
+      <li>
+         <a href="#ILI_category" title="http://www.iiitdwd.ac.in/ACB/COKPME#ILI_category">ILI</a>
+      </li>
+      <li>
+         <a href="#Influenza_Like_Illness"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness">InfluenzaLikeIllness</a>
+      </li>
+      <li>
+         <a href="#Location" title="http://www.iiitdwd.ac.in/ACB/COKPME#Location">
+            <span>location</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Name" title="http://www.iiitdwd.ac.in/ACB/COKPME#Name">
+            <span>name</span>
+         </a>
+      </li>
+      <li>
+         <a href="#OtherComorbidityCondition"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+      </li>
+      <li>
+         <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+      </li>
+      <li>
+         <a href="#PatientAddress"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress">PatientAddress</a>
+      </li>
+      <li>
+         <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">Person</a>
+      </li>
+      <li>
+         <a href="#Phone" title="http://www.iiitdwd.ac.in/ACB/COKPME#Phone">Phone</a>
+      </li>
+      <li>
+         <a href="#PID" title="http://www.iiitdwd.ac.in/ACB/COKPME#PID">PID</a>
+      </li>
+      <li>
+         <a href="#SARI_category"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#SARI_category">SARI</a>
+      </li>
+      <li>
+         <a href="#Sever_Acute_Respiratory_Infection"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection">SeverAcuteRespiratoryInfection</a>
+      </li>
+      <li>
+         <a href="#Treatment" title="http://www.iiitdwd.ac.in/ACB/COKPME#Treatment">Treatment</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://www.w3.org/2006/time#DateTimeDescription">
+      <h3>AdmittedDate<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2006/time#DateTimeDescription</p>
+      <div class="comment">
+         <span class="markdown">This refers to the patient admitted or diagnoised data and time</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd/>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://www.w3.org/2006/time#day" title="http://www.w3.org/2006/time#day">day</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.w3.org/2006/time#month" title="http://www.w3.org/2006/time#month">month</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#reportedDate" title="http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate">reportDate</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#reported_On" title="http://www.iiitdwd.ac.in/ACB/COKPME#reported_On">reportedOn</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/2006/time#year" title="http://www.w3.org/2006/time#year">year</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Age">
+      <h3>Age<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Age</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://xmlns.com/foaf/0.1/Agent">
+      <h3>Agent<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://xmlns.com/foaf/0.1/Agent</p>
+      <div class="comment">
+         <span class="markdown">An agent is person,  or physical artifact</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">Person</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ClinicalFindings">
+      <h3>Clinical findings<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#ClinicalFindings</p>
+      <div class="comment">
+         <span class="markdown">Initial diagnosis of patient by healthworkers.</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#ComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition">Comorbidity Condition</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ComorbidityCondition">
+      <h3>Comorbidity Condition<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition</p>
+      <div class="comment">
+         <span class="markdown">indicate a medical condition existing simultaneously but independently with another condition in a patient (source: Wikipedia)</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ClinicalFindings"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#ClinicalFindings">Clinical findings</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#Other" title="http://www.iiitdwd.ac.in/ACB/COKPME#Other">other</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="COVID-19_Suspect">
+      <h3>COVID19Suspect<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect</p>
+      <div class="comment">
+         <span class="markdown">Coronavirus disease course - Viral disease course that is the realization of some coronavirus disease and has as a participant a coronavirus.</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#Call_to_Emergency_108_for_Covid-19_testing"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing">Call_to_Emergency_108_for_Covid-19_testing</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="logic">some</span> 
+            <a href="http://www.w3.org/2001/XMLSchema#string"
+               target="_blank"
+               title="http://www.w3.org/2001/XMLSchema#string">string</a>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Diagnosis" title="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis">Diagnosis</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="COVID19Suspect">
+      <h3>COVIDTest<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#hasCategory" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory">hasCategory</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#COVID-19_Suspect"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect">COVID19Suspect</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>named individual</dd>
+      </dl>
+   </div>
+   <div class="entity" id="Diagnosis">
+      <h3>Diagnosis<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis</p>
+      <div class="comment">
+         <span class="markdown">Initial process carried when a patient visit the healthcare providers</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#COVID-19_Suspect"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect">COVID19Suspect</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Influenza_Like_Illness"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness">InfluenzaLikeIllness</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Sever_Acute_Respiratory_Infection"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection">SeverAcuteRespiratoryInfection</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#isDiagnoisedFor"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor">Is Diagnoised For</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#diagnoisedFor" title="http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor">diagnoisedFor</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasCategory" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory">hasCategory</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasDiagnoisedFor"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor">hasDiagnoisedFor</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasSymptom" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasSymptom">hasSymptom</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="District">
+      <h3>District<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#District</p>
+      <div class="comment">
+         <span class="markdown">District where hospital is located.</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#district" title="http://www.iiitdwd.ac.in/ACB/COKPME#district">district</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="logic">some</span> 
+            <a href="http://www.w3.org/2001/XMLSchema#string"
+               target="_blank"
+               title="http://www.w3.org/2001/XMLSchema#string">string</a>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Hospital" title="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital">hospital</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Hospital">
+      <h3>hospital<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Hospital</p>
+      <div class="comment">
+         <span class="markdown">Healthcare facility</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#District" title="http://www.iiitdwd.ac.in/ACB/COKPME#District">District</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ID" title="http://www.iiitdwd.ac.in/ACB/COKPME#ID">ID</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Treatment" title="http://www.iiitdwd.ac.in/ACB/COKPME#Treatment">Treatment</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Name" title="http://www.iiitdwd.ac.in/ACB/COKPME#Name">name</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasAdmittedPatient"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedPatient">hasAdmittedPatient</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasAdmittedTo" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo">hasAdmittedTo</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="HospitalAddress">
+      <h3>HospitalAddress<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#HospitalAddress</p>
+      <div class="comment">
+         <span class="markdown">Hospital address reefer to the place. 
+In the ontology here we have 2 address-  Patient residence address and Hospital address</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Location" title="http://www.iiitdwd.ac.in/ACB/COKPME#Location">location</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ID">
+      <h3>ID<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#ID</p>
+      <div class="comment">
+         <span class="markdown">Every hospital has ID assigned by the respective government authority.
+It is unique across the karnataka state.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Hospital" title="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital">hospital</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hospitalCode" title="http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode">HID</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ILI_category">
+      <h3>ILI<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#ILI_category</p>
+      <div class="comment">
+         <span class="markdown">Patient categorized under ILI symptom</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#hasCategory" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory">hasCategory</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#Influenza_Like_Illness"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness">InfluenzaLikeIllness</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Influenza_Like_Illness">
+      <h3>InfluenzaLikeIllness<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness</p>
+      <div class="comment">
+         <span class="markdown">Patients with fever and/or upper respiratory tract illness (Influenza
+Like Illness, ILI)</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#Medicines_prescribed_with_home_quarantine_advice"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#Medicines_prescribed_with_home_quarantine_advice">Medicines_prescribed_with_home_quarantine_advice</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="logic">some</span> 
+            <a href="http://www.w3.org/2001/XMLSchema#string"
+               target="_blank"
+               title="http://www.w3.org/2001/XMLSchema#string">string</a>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Diagnosis" title="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis">Diagnosis</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Location">
+      <h3>location<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Location</p>
+      <div class="comment">
+         <span class="markdown">Categorized into 2 parts
+1. PLocation - Patient Location
+2. HLocation -  Hospital/Clinic Location 
+
+Patient address indicates the address provided during the registration 
+Hospital/clinic Location Indicates the respective hospital for which patient has visited to checkpup.</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#HospitalAddress"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#HospitalAddress">HospitalAddress</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PatientAddress"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress">PatientAddress</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#address" title="http://www.iiitdwd.ac.in/ACB/COKPME#address">address</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#addressLocality"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#addressLocality">addressLocality</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#postalCode" title="http://www.iiitdwd.ac.in/ACB/COKPME#postalCode">postal code</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#streetAddress"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#streetAddress">street address</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Name">
+      <h3>name<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Name</p>
+      <div class="comment">
+         <span class="markdown">Name</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Hospital" title="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital">hospital</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="OtherComorbidityCondition">
+      <h3>Other Comorbidity conditions<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition</p>
+      <div class="comment">
+         <span class="markdown">Other Comorbidity conditions like fever, cough, BP, etc.,</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition">Comorbidity Condition</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#sufferFrom" title="http://www.iiitdwd.ac.in/ACB/COKPME#sufferFrom">sufferFrom</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#otherComorbidConditions"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions">otherComorbidConditions</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#ASYMPTOMATIC"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#ASYMPTOMATIC">a s y m p t o m a t i c</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Acidity" title="http://www.iiitdwd.ac.in/ACB/COKPME#Acidity">acidity</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#AcuteRespiratoryDistressSyndrome"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#AcuteRespiratoryDistressSyndrome">acute respiratory distress syndrome</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Anemia" title="http://www.iiitdwd.ac.in/ACB/COKPME#Anemia">anemia</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Breathlessness"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#Breathlessness">breathlessness</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#BronchialAsthma"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#BronchialAsthma">bronchial asthma</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#COPD" title="http://www.iiitdwd.ac.in/ACB/COKPME#COPD">c o p d</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Cold" title="http://www.iiitdwd.ac.in/ACB/COKPME#Cold">cold</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Cough" title="http://www.iiitdwd.ac.in/ACB/COKPME#Cough">cough</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#DIARRHOEA" title="http://www.iiitdwd.ac.in/ACB/COKPME#DIARRHOEA">d i a r r h o e a</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Diabetic" title="http://www.iiitdwd.ac.in/ACB/COKPME#Diabetic">diabetic</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#DryCough" title="http://www.iiitdwd.ac.in/ACB/COKPME#DryCough">dry cough</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ExpectorationBreathlessness"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#ExpectorationBreathlessness">expectoration breathlessness</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Fever" title="http://www.iiitdwd.ac.in/ACB/COKPME#Fever">fever</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#FeverCough" title="http://www.iiitdwd.ac.in/ACB/COKPME#FeverCough">fever cough</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#FeverCoughWheezing"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#FeverCoughWheezing">fever cough wheezing</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#FeverWeaknessBodyacheEpigastricPain"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessBodyacheEpigastricPain">fever weakness bodyache epigastric pain</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#FeverWeaknessPainAbdomen"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessPainAbdomen">fever weakness pain abdomen</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#forCovidTest"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#forCovidTest">for covid test</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Heart_Disease"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#Heart_Disease">heart disease</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Hypertension"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#Hypertension">hypertension</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#HypoThyorid" title="http://www.iiitdwd.ac.in/ACB/COKPME#HypoThyorid">hypo thyorid</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ILI" title="http://www.iiitdwd.ac.in/ACB/COKPME#ILI">i l i</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#LooseStoolsAssoicatedWithFever"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#LooseStoolsAssoicatedWithFever">loose stools assoicated with fever</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#NIL" title="http://www.iiitdwd.ac.in/ACB/COKPME#NIL">n i l</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Other" title="http://www.iiitdwd.ac.in/ACB/COKPME#Other">other</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#PNEUMONIA" title="http://www.iiitdwd.ac.in/ACB/COKPME#PNEUMONIA">p n e u m o n i a</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#PneumoniawithLRTI"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#PneumoniawithLRTI">pneumoniawith l r t i</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Screaming" title="http://www.iiitdwd.ac.in/ACB/COKPME#Screaming">screaming</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ViralFever" title="http://www.iiitdwd.ac.in/ACB/COKPME#ViralFever">viral fever</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Patient">
+      <h3>Patient<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Patient</p>
+      <div class="comment">
+         <span class="markdown">Patient who is under diagnosis with symptoms of ILI/ SARI or FOR covid test</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">Person</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Age" title="http://www.iiitdwd.ac.in/ACB/COKPME#Age">Age</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#COVID19Suspect"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect">COVIDTest</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ILI_category" title="http://www.iiitdwd.ac.in/ACB/COKPME#ILI_category">ILI</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PID" title="http://www.iiitdwd.ac.in/ACB/COKPME#PID">PID</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Phone" title="http://www.iiitdwd.ac.in/ACB/COKPME#Phone">Phone</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#SARI_category"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#SARI_category">SARI</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#Call_to_Emergency_108_for_Covid-19_testing"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing">Call_to_Emergency_108_for_Covid-19_testing</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#Medicines_prescribed_with_home_quarantine_advice"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#Medicines_prescribed_with_home_quarantine_advice">Medicines_prescribed_with_home_quarantine_advice</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#Shift_to_other_hospital"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#Shift_to_other_hospital">Shift_to_other_hospital</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasPhoneN" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN">has phone n</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPID" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasPID">hasPID</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSymptom" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasSymptom">hasSymptom</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#otherComorbidConditions"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions">otherComorbidConditions</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#XXXX00000001"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001">x x x x00000001</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PatientAddress">
+      <h3>PatientAddress<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress</p>
+      <div class="comment">
+         <span class="markdown">Residential address/address provided by patient during diagnosis</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Location" title="http://www.iiitdwd.ac.in/ACB/COKPME#Location">location</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasPAddress" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasPAddress">has p address</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isLocatedAt" title="http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt">is located at</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://xmlns.com/foaf/0.1/Person">
+      <h3>Person<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://xmlns.com/foaf/0.1/Person</p>
+      <div class="comment">
+         <span class="markdown">Patient / Human</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://xmlns.com/foaf/0.1/Agent" title="http://xmlns.com/foaf/0.1/Agent">Agent</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Phone">
+      <h3>Phone<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Phone</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#2147483647" title="http://www.iiitdwd.ac.in/ACB/COKPME#2147483647">2147483647</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PID">
+      <h3>PID<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#PID</p>
+      <div class="comment">
+         <span class="markdown">Identification of Patient</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="SARI_category">
+      <h3>SARI<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#SARI_category</p>
+      <div class="comment">
+         <span class="markdown">Patient categorized under SARI</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#hasCategory" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory">hasCategory</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#Sever_Acute_Respiratory_Infection"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection">SeverAcuteRespiratoryInfection</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Sever_Acute_Respiratory_Infection">
+      <h3>SeverAcuteRespiratoryInfection<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection</p>
+      <div class="comment">
+         <span class="markdown">"Severe Pneumonia (with respiratory rate ≥30/minute and/or SpO2 &lt; 90% in room air) or ARDS or Septic shock.</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#Shift_to_other_hospital"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#Shift_to_other_hospital">Shift_to_other_hospital</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="logic">some</span> 
+            <a href="http://www.w3.org/2001/XMLSchema#string"
+               target="_blank"
+               title="http://www.w3.org/2001/XMLSchema#string">string</a>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Diagnosis" title="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis">Diagnosis</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Treatment">
+      <h3>Treatment<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Treatment</p>
+      <div class="comment">
+         <span class="markdown">Treatment provided to teh patient by the respective hospital.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Hospital" title="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital">hospital</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#treatmentProvided"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#treatmentProvided">treatment provided</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#diagnoisedFor" title="http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor">diagnoisedFor</a>
+      </li>
+      <li>
+         <a href="#hasPAddress" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasPAddress">
+            <span>has p address</span>
+         </a>
+      </li>
+      <li>
+         <a href="#hasPhoneN" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN">
+            <span>has phone n</span>
+         </a>
+      </li>
+      <li>
+         <a href="#hasAdmittedPatient"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedPatient">hasAdmittedPatient</a>
+      </li>
+      <li>
+         <a href="#hasAdmittedTo" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo">hasAdmittedTo</a>
+      </li>
+      <li>
+         <a href="#hasCategory" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory">hasCategory</a>
+      </li>
+      <li>
+         <a href="#hasDiagnoisedFor"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor">hasDiagnoisedFor</a>
+      </li>
+      <li>
+         <a href="#hasdistrict" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasdistrict">hasDistrict</a>
+      </li>
+      <li>
+         <a href="#hasPID" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasPID">hasPID</a>
+      </li>
+      <li>
+         <a href="#hasSymptom" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasSymptom">hasSymptom</a>
+      </li>
+      <li>
+         <a href="#isDiagnoisedFor"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor">Is Diagnoised For</a>
+      </li>
+      <li>
+         <a href="#isLocatedAt" title="http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt">
+            <span>is located at</span>
+         </a>
+      </li>
+      <li>
+         <a href="#isAdmittedTo" title="http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo">isAdmittedTo</a>
+      </li>
+      <li>
+         <a href="#otherComorbidConditions"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions">otherComorbidConditions</a>
+      </li>
+      <li>
+         <a href="#reported_On" title="http://www.iiitdwd.ac.in/ACB/COKPME#reported_On">reportedOn</a>
+      </li>
+      <li>
+         <a href="#sufferFrom" title="http://www.iiitdwd.ac.in/ACB/COKPME#sufferFrom">sufferFrom</a>
+      </li>
+      <li>
+         <a href="#treatmentProvided"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#treatmentProvided">
+            <span>treatment provided</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="diagnoisedFor">
+      <h3>diagnoisedFor<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor</p>
+      <div class="comment">
+         <span class="markdown">Diagnoised For ILI / COVID suspect / SARI</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#isDiagnoisedFor"
+                  title="http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor">Is Diagnoised For</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#hasDiagnoisedFor"
+                  title="http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor">hasDiagnoisedFor</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Diagnosis" title="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis">Diagnosis</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasPAddress">
+      <h3>has p address<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#hasPAddress</p>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#isLocatedAt" title="http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt">is located at</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PatientAddress"
+                  title="http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress">PatientAddress</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#isLocatedAt" title="http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt">is located at</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">some</span> 
+               <a href="#PatientAddress"
+                  title="http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress">PatientAddress</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasPhoneN">
+      <h3>has phone n<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN</p>
+      <div class="comment">
+         <span class="markdown">Phone number is point of reference for patient. Along with the PID we can use patient phone number for processing data</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasPhone" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone">hasPhone</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">some</span> 
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#hasPhone" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone">hasPhone</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">some</span> 
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasAdmittedPatient">
+      <h3>hasAdmittedPatient<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedPatient</p>
+      <div class="comment">
+         <span class="markdown">refers to teh hsospital where patient sis admitted for diagnosis</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Hospital" title="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital">hospital</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasAdmittedTo">
+      <h3>hasAdmittedTo<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo</p>
+      <div class="comment">
+         <span class="markdown">Has Admitted hospital for COVID DIAGNOSIS</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#isAdmittedTo" title="http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo">isAdmittedTo</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Hospital" title="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital">hospital</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasCategory">
+      <h3>hasCategory<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory</p>
+      <div class="comment">
+         <span class="markdown">Category refere to 3 type :
+1. COVID Suspect
+2. ILI
+3. SARI</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Diagnosis" title="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis">Diagnosis</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasDiagnoisedFor">
+      <h3>hasDiagnoisedFor<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor</p>
+      <div class="comment">
+         <span class="markdown">Has Diagnoised ILI/ SARI/ COVID</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#diagnoisedFor" title="http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor">diagnoisedFor</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Diagnosis" title="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis">Diagnosis</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isDiagnoisedFor"
+                  title="http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor">Is Diagnoised For</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasdistrict">
+      <h3>hasDistrict<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#hasdistrict</p>
+      <div class="comment">
+         <span class="markdown">DIstrict has all teh name of karnataks state district as instances.</span>
+      </div>
+   </div>
+   <div class="entity" id="hasPID">
+      <h3>hasPID<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#hasPID</p>
+      <div class="comment">
+         <span class="markdown">Every patient is assigned with the ID number as anonymize  process</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSymptom">
+      <h3>hasSymptom<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#hasSymptom</p>
+      <div class="comment">
+         <span class="markdown">The symptom of patient is referred</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Diagnosis" title="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis">Diagnosis</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isDiagnoisedFor">
+      <h3>Is Diagnoised For<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor</p>
+      <div class="comment">
+         <span class="markdown">Inverse of Has Diagnoised For</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#diagnoisedFor" title="http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor">diagnoisedFor</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Diagnosis" title="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis">Diagnosis</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#hasDiagnoisedFor"
+                  title="http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor">hasDiagnoisedFor</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isLocatedAt">
+      <h3>is located at<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt</p>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> inverse functional</p>
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#hasPAddress" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasPAddress">has p address</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PatientAddress"
+                  title="http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress">PatientAddress</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#address" title="http://www.iiitdwd.ac.in/ACB/COKPME#address">address</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">some</span> 
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isAdmittedTo">
+      <h3>isAdmittedTo<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo</p>
+      <div class="comment">
+         <span class="markdown">Patient admitted to the hospital for COVID TEST AND DIAGNOSIS</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> inverse functional</p>
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#hasAdmittedTo" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo">hasAdmittedTo</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="otherComorbidConditions">
+      <h3>otherComorbidConditions<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions</p>
+      <div class="comment">
+         <span class="markdown">Refers to other comorbid contion that patient has. previous medical history or others health issue in parallel</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#OtherComorbidityCondition"
+                  title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="reported_On">
+      <h3>reportedOn<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#reported_On</p>
+      <div class="comment">
+         <span class="markdown">Date on which he is diagnoised or called for COVID TEST</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/time#DateTimeDescription" title="http://www.w3.org/2006/time#DateTimeDescription">AdmittedDate</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="sufferFrom">
+      <h3>sufferFrom<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#sufferFrom</p>
+      <div class="comment">
+         <span class="markdown">Suffer from other comorbid conditions</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#OtherComorbidityCondition"
+                  title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="treatmentProvided">
+      <h3>treatment provided<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#treatmentProvided</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Treatment" title="http://www.iiitdwd.ac.in/ACB/COKPME#Treatment">Treatment</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#address" title="http://www.iiitdwd.ac.in/ACB/COKPME#address">address</a>
+      </li>
+      <li>
+         <a href="#addressLocality"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#addressLocality">addressLocality</a>
+      </li>
+      <li>
+         <a href="#area" title="http://www.iiitdwd.ac.in/ACB/COKPME#area">
+            <span>area</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Call_to_Emergency_108_for_Covid-19_testing"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing">
+            <span>Call_to_Emergency_108_for_Covid-19_testing</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2006/time#day" title="http://www.w3.org/2006/time#day">
+            <span>day</span>
+         </a>
+      </li>
+      <li>
+         <a href="#district" title="http://www.iiitdwd.ac.in/ACB/COKPME#district">district</a>
+      </li>
+      <li>
+         <a href="#foaf:age" title="http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age">foaf:age</a>
+      </li>
+      <li>
+         <a href="#http://xmlns.com/foaf/0.1/name" title="http://xmlns.com/foaf/0.1/name">foaf:name</a>
+      </li>
+      <li>
+         <a href="#hasPhone" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone">hasPhone</a>
+      </li>
+      <li>
+         <a href="#hospitalCode" title="http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode">HID</a>
+      </li>
+      <li>
+         <a href="#Medicines_prescribed_with_home_quarantine_advice"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#Medicines_prescribed_with_home_quarantine_advice">Medicines_prescribed_with_home_quarantine_advice</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2006/time#month" title="http://www.w3.org/2006/time#month">
+            <span>month</span>
+         </a>
+      </li>
+      <li>
+         <a href="#hasID" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasID">PID</a>
+      </li>
+      <li>
+         <a href="#postalCode" title="http://www.iiitdwd.ac.in/ACB/COKPME#postalCode">
+            <span>postal code</span>
+         </a>
+      </li>
+      <li>
+         <a href="#reportedDate" title="http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate">reportDate</a>
+      </li>
+      <li>
+         <a href="#Shift_to_other_hospital"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#Shift_to_other_hospital">Shift_to_other_hospital</a>
+      </li>
+      <li>
+         <a href="#streetAddress"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#streetAddress">
+            <span>street address</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2006/time#year" title="http://www.w3.org/2006/time#year">
+            <span>year</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="address">
+      <h3>address<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#address</p>
+      <div class="comment">
+         <span class="markdown">Address comes with the locality, pin code and street address</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#addressLocality"
+                  title="http://www.iiitdwd.ac.in/ACB/COKPME#addressLocality">addressLocality</a>
+               <sup class="type-dp" title="data property">dp</sup>, <a href="#area" title="http://www.iiitdwd.ac.in/ACB/COKPME#area">area</a>
+               <sup class="type-dp" title="data property">dp</sup>, <a href="#district" title="http://www.iiitdwd.ac.in/ACB/COKPME#district">district</a>
+               <sup class="type-dp" title="data property">dp</sup>, <a href="#postalCode" title="http://www.iiitdwd.ac.in/ACB/COKPME#postalCode">postal code</a>
+               <sup class="type-dp" title="data property">dp</sup>, <a href="#streetAddress"
+                  title="http://www.iiitdwd.ac.in/ACB/COKPME#streetAddress">street address</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Location" title="http://www.iiitdwd.ac.in/ACB/COKPME#Location">location</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#Hospital" title="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital">hospital</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="addressLocality">
+      <h3>addressLocality<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#addressLocality</p>
+      <div class="comment">
+         <span class="markdown">Indicates teh district or taluk</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#address" title="http://www.iiitdwd.ac.in/ACB/COKPME#address">address</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Location" title="http://www.iiitdwd.ac.in/ACB/COKPME#Location">location</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="area">
+      <h3>area<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#area</p>
+      <div class="comment">
+         <span class="markdown">Particluar area of district or taluk</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#address" title="http://www.iiitdwd.ac.in/ACB/COKPME#address">address</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="Call_to_Emergency_108_for_Covid-19_testing">
+      <h3>Call_to_Emergency_108_for_Covid-19_testing<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>named individual</dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/2006/time#day">
+      <h3>day<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2006/time#day</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#reportedDate" title="http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate">reportDate</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/time#DateTimeDescription" title="http://www.w3.org/2006/time#DateTimeDescription">AdmittedDate</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#int"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#int">int</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="district">
+      <h3>district<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#district</p>
+      <div class="comment">
+         <span class="markdown">District name</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#address" title="http://www.iiitdwd.ac.in/ACB/COKPME#address">address</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#District" title="http://www.iiitdwd.ac.in/ACB/COKPME#District">District</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Location" title="http://www.iiitdwd.ac.in/ACB/COKPME#Location">location</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="foaf:age">
+      <h3>foaf:age<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age</p>
+      <div class="comment">
+         <span class="markdown">patient age is indicated in year and month</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#foaf:age" title="http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age">foaf:age</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">some</span> 
+               <a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://xmlns.com/foaf/0.1/name">
+      <h3>foaf:name<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://xmlns.com/foaf/0.1/name</p>
+      <div class="comment">
+         <span class="markdown">Patient name</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://xmlns.com/foaf/0.1/name" title="http://xmlns.com/foaf/0.1/name">foaf:name</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">some</span> 
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasPhone">
+      <h3>hasPhone<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone</p>
+      <div class="comment">
+         <span class="markdown">Patient phone number provided during registration.
+In case of husband wife the phone number is same in most of the cases.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#hasPhoneN" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN">has phone n</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">some</span> 
+               <a href="#Phone" title="http://www.iiitdwd.ac.in/ACB/COKPME#Phone">Phone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hospitalCode">
+      <h3>HID<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode</p>
+      <div class="comment">
+         <span class="markdown">Hospital ID - Assigned by KPME</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ID" title="http://www.iiitdwd.ac.in/ACB/COKPME#ID">ID</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="http://www.iiitdwd.ac.in/ACB/COKPME#hasHID"
+                  target="_blank"
+                  title="http://www.iiitdwd.ac.in/ACB/COKPME#hasHID">has h i d</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">some</span> 
+               <a href="#ID" title="http://www.iiitdwd.ac.in/ACB/COKPME#ID">ID</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="Medicines_prescribed_with_home_quarantine_advice">
+      <h3>Medicines_prescribed_with_home_quarantine_advice<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Medicines_prescribed_with_home_quarantine_advice</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/2006/time#month">
+      <h3>month<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2006/time#month</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#reportedDate" title="http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate">reportDate</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/time#DateTimeDescription" title="http://www.w3.org/2006/time#DateTimeDescription">AdmittedDate</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasID">
+      <h3>PID<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#hasID</p>
+      <div class="comment">
+         <span class="markdown">Patient ID FOR REFERENCE. 
+Additionall added for teh dataset</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:
+                </strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#hasPID" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasPID">hasPID</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">some</span> 
+               <a href="#PID" title="http://www.iiitdwd.ac.in/ACB/COKPME#PID">PID</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="postalCode">
+      <h3>postal code<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#postalCode</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#address" title="http://www.iiitdwd.ac.in/ACB/COKPME#address">address</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Location" title="http://www.iiitdwd.ac.in/ACB/COKPME#Location">location</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="reportedDate">
+      <h3>reportDate<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate</p>
+      <div class="comment">
+         <span class="markdown">admitted for diagnosis</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/time#day" title="http://www.w3.org/2006/time#day">day</a>
+               <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.w3.org/2006/time#month" title="http://www.w3.org/2006/time#month">month</a>
+               <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.w3.org/2006/time#year" title="http://www.w3.org/2006/time#year">year</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/time#DateTimeDescription" title="http://www.w3.org/2006/time#DateTimeDescription">AdmittedDate</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="Shift_to_other_hospital">
+      <h3>Shift_to_other_hospital<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Shift_to_other_hospital</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="streetAddress">
+      <h3>street address<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#streetAddress</p>
+      <div class="comment">
+         <span class="markdown">Street name</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#address" title="http://www.iiitdwd.ac.in/ACB/COKPME#address">address</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Location" title="http://www.iiitdwd.ac.in/ACB/COKPME#Location">location</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/2006/time#year">
+      <h3>year<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2006/time#year</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#reportedDate" title="http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate">reportDate</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/time#DateTimeDescription" title="http://www.w3.org/2006/time#DateTimeDescription">AdmittedDate</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+   <h3 id="namedindividuals" class="list">Named Individuals</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#2147483647" title="http://www.iiitdwd.ac.in/ACB/COKPME#2147483647">2147483647</a>
+      </li>
+      <li>
+         <a href="#ASYMPTOMATIC"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#ASYMPTOMATIC">
+            <span>a s y m p t o m a t i c</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Acidity" title="http://www.iiitdwd.ac.in/ACB/COKPME#Acidity">
+            <span>acidity</span>
+         </a>
+      </li>
+      <li>
+         <a href="#AcuteRespiratoryDistressSyndrome"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#AcuteRespiratoryDistressSyndrome">
+            <span>acute respiratory distress syndrome</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Anemia" title="http://www.iiitdwd.ac.in/ACB/COKPME#Anemia">
+            <span>anemia</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Breathlessness"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#Breathlessness">
+            <span>breathlessness</span>
+         </a>
+      </li>
+      <li>
+         <a href="#BronchialAsthma"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#BronchialAsthma">
+            <span>bronchial asthma</span>
+         </a>
+      </li>
+      <li>
+         <a href="#COPD" title="http://www.iiitdwd.ac.in/ACB/COKPME#COPD">
+            <span>c o p d</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Cold" title="http://www.iiitdwd.ac.in/ACB/COKPME#Cold">
+            <span>cold</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Cough" title="http://www.iiitdwd.ac.in/ACB/COKPME#Cough">
+            <span>cough</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DIARRHOEA" title="http://www.iiitdwd.ac.in/ACB/COKPME#DIARRHOEA">
+            <span>d i a r r h o e a</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Diabetic" title="http://www.iiitdwd.ac.in/ACB/COKPME#Diabetic">
+            <span>diabetic</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DryCough" title="http://www.iiitdwd.ac.in/ACB/COKPME#DryCough">
+            <span>dry cough</span>
+         </a>
+      </li>
+      <li>
+         <a href="#ExpectorationBreathlessness"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#ExpectorationBreathlessness">
+            <span>expectoration breathlessness</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Fever" title="http://www.iiitdwd.ac.in/ACB/COKPME#Fever">
+            <span>fever</span>
+         </a>
+      </li>
+      <li>
+         <a href="#FeverCough" title="http://www.iiitdwd.ac.in/ACB/COKPME#FeverCough">
+            <span>fever cough</span>
+         </a>
+      </li>
+      <li>
+         <a href="#FeverCoughWheezing"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#FeverCoughWheezing">
+            <span>fever cough wheezing</span>
+         </a>
+      </li>
+      <li>
+         <a href="#FeverWeaknessBodyacheEpigastricPain"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessBodyacheEpigastricPain">
+            <span>fever weakness bodyache epigastric pain</span>
+         </a>
+      </li>
+      <li>
+         <a href="#FeverWeaknessPainAbdomen"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessPainAbdomen">
+            <span>fever weakness pain abdomen</span>
+         </a>
+      </li>
+      <li>
+         <a href="#forCovidTest"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#forCovidTest">
+            <span>for covid test</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Heart_Disease"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#Heart_Disease">
+            <span>heart disease</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Hypertension"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#Hypertension">
+            <span>hypertension</span>
+         </a>
+      </li>
+      <li>
+         <a href="#HypoThyorid" title="http://www.iiitdwd.ac.in/ACB/COKPME#HypoThyorid">
+            <span>hypo thyorid</span>
+         </a>
+      </li>
+      <li>
+         <a href="#ILI" title="http://www.iiitdwd.ac.in/ACB/COKPME#ILI">
+            <span>i l i</span>
+         </a>
+      </li>
+      <li>
+         <a href="#LooseStoolsAssoicatedWithFever"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#LooseStoolsAssoicatedWithFever">
+            <span>loose stools assoicated with fever</span>
+         </a>
+      </li>
+      <li>
+         <a href="#NIL" title="http://www.iiitdwd.ac.in/ACB/COKPME#NIL">
+            <span>n i l</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Other" title="http://www.iiitdwd.ac.in/ACB/COKPME#Other">
+            <span>other</span>
+         </a>
+      </li>
+      <li>
+         <a href="#PNEUMONIA" title="http://www.iiitdwd.ac.in/ACB/COKPME#PNEUMONIA">
+            <span>p n e u m o n i a</span>
+         </a>
+      </li>
+      <li>
+         <a href="#PneumoniawithLRTI"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#PneumoniawithLRTI">
+            <span>pneumoniawith l r t i</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Screaming" title="http://www.iiitdwd.ac.in/ACB/COKPME#Screaming">
+            <span>screaming</span>
+         </a>
+      </li>
+      <li>
+         <a href="#ViralFever" title="http://www.iiitdwd.ac.in/ACB/COKPME#ViralFever">
+            <span>viral fever</span>
+         </a>
+      </li>
+      <li>
+         <a href="#XXXX00000001"
+            title="http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001">
+            <span>x x x x00000001</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="2147483647">
+      <h3>2147483647<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#2147483647</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Phone" title="http://www.iiitdwd.ac.in/ACB/COKPME#Phone">Phone</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ASYMPTOMATIC">
+      <h3>a s y m p t o m a t i c<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#ASYMPTOMATIC</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Acidity">
+      <h3>acidity<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Acidity</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="AcuteRespiratoryDistressSyndrome">
+      <h3>acute respiratory distress syndrome<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#AcuteRespiratoryDistressSyndrome</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Anemia">
+      <h3>anemia<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Anemia</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Breathlessness">
+      <h3>breathlessness<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Breathlessness</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="BronchialAsthma">
+      <h3>bronchial asthma<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#BronchialAsthma</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="COPD">
+      <h3>c o p d<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#COPD</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Cold">
+      <h3>cold<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Cold</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Cough">
+      <h3>cough<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Cough</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DIARRHOEA">
+      <h3>d i a r r h o e a<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#DIARRHOEA</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Diabetic">
+      <h3>diabetic<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Diabetic</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DryCough">
+      <h3>dry cough<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#DryCough</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ExpectorationBreathlessness">
+      <h3>expectoration breathlessness<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#ExpectorationBreathlessness</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Fever">
+      <h3>fever<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Fever</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="FeverCough">
+      <h3>fever cough<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#FeverCough</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="FeverCoughWheezing">
+      <h3>fever cough wheezing<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#FeverCoughWheezing</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="FeverWeaknessBodyacheEpigastricPain">
+      <h3>fever weakness bodyache epigastric pain<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessBodyacheEpigastricPain</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="FeverWeaknessPainAbdomen">
+      <h3>fever weakness pain abdomen<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessPainAbdomen</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="forCovidTest">
+      <h3>for covid test<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#forCovidTest</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Heart_Disease">
+      <h3>heart disease<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Heart_Disease</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Hypertension">
+      <h3>hypertension<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Hypertension</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="HypoThyorid">
+      <h3>hypo thyorid<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#HypoThyorid</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ILI">
+      <h3>i l i<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#ILI</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="LooseStoolsAssoicatedWithFever">
+      <h3>loose stools assoicated with fever<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#LooseStoolsAssoicatedWithFever</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="NIL">
+      <h3>n i l<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#NIL</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Other">
+      <h3>other<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Other</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#ComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition">Comorbidity Condition</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PNEUMONIA">
+      <h3>p n e u m o n i a<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#PNEUMONIA</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PneumoniawithLRTI">
+      <h3>pneumoniawith l r t i<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#PneumoniawithLRTI</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Screaming">
+      <h3>screaming<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#Screaming</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ViralFever">
+      <h3>viral fever<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#ViralFever</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#OtherComorbidityCondition"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">Other Comorbidity conditions</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="XXXX00000001">
+      <h3>x x x x00000001<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Patient" title="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">Patient</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#hasAdmittedTo" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo">hasAdmittedTo</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="http://www.iiitdwd.ac.in/ACB/COKPME#COLUMBIA_ASIA_HOSPITAL_HEBBAL"
+               target="_blank"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#COLUMBIA_ASIA_HOSPITAL_HEBBAL">c o l u m b i a a s i a h o s p i t a l h e b b a l</a>
+         </dd>
+         <dd>
+            <a href="#hasAdmittedTo" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo">hasAdmittedTo</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="http://www.iiitdwd.ac.in/ACB/COKPME#H16472"
+               target="_blank"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#H16472">h16472</a>
+         </dd>
+         <dd>
+            <a href="#hasCategory" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory">hasCategory</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="#COVID19Suspect"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect">COVIDTest</a>
+         </dd>
+         <dd>
+            <a href="#otherComorbidConditions"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions">otherComorbidConditions</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="#forCovidTest"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#forCovidTest">for covid test</a>
+         </dd>
+         <dd>
+            <a href="#Call_to_Emergency_108_for_Covid-19_testing"
+               title="http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing">Call_to_Emergency_108_for_Covid-19_testing</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">""</span>
+         </dd>
+         <dd>
+            <a href="#hasID" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasID">PID</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"XXXX00000001"</span>
+         </dd>
+         <dd>
+            <a href="#hasPhone" title="http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone">hasPhone</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"9900990099"</span>
+         </dd>
+         <dd>
+            <a href="#hospitalCode" title="http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode">HID</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"H16472"</span>
+         </dd>
+         <dd>
+            <a href="#http://www.w3.org/2006/time#month" title="http://www.w3.org/2006/time#month">month</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"March"</span>
+         </dd>
+         <dd>
+            <a href="#http://xmlns.com/foaf/0.1/name" title="http://xmlns.com/foaf/0.1/name">foaf:name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Ram Gopal"</span>
+         </dd>
+      </dl>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

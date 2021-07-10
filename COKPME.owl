@@ -1,0 +1,1241 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.iiitdwd.ac.in/ACB/K-COVID19-2#"
+     xml:base="http://www.iiitdwd.ac.in/ACB/K-COVID19-2"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:COKPME="http://www.iiitdwd.ac.in/ACB/COKPME#"
+     xmlns:K-COVID19-2="http://www.iiitdwd.ac.in/ACB/K-COVID19-2#">
+    <owl:Ontology rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME">
+        <owl:imports rdf:resource="http://purl.org/NET/dc_owl2dl/terms"/>
+        <dc:creator xml:lang="en">Abhilash C B (IIIT Dharwad)</dc:creator>
+        <dc:creator xml:lang="en">Kavi Mahesh (IIIT Dharwad)</dc:creator>
+        <dc:date xml:lang="en">July 2021</dc:date>
+        <dc:publisher xml:lang="en">IIIT Dharwad</dc:publisher>
+        <dc:title xml:lang="en">COKPME - COVID19 Ontology for analysing Karnataka Private Medical Establishment data</dc:title>
+        <COKPME:designedFor xml:lang="en">The ontology will be used by analyst for finding the relative and precautionary measures that can be put in action for controlling the spread. Also, it should be able to handle the competence question like: 
+ Which properties of the patient should be considered for modeling
+ Which properties of patient changes
+ Which properties of patient confirms COVID positive
+ Do the symptom of patient changes over a time ***
+ Do the treatment provided depends on the category of patient
+ Does other comorbid conditions derive any interestingness ****
+ Which symptom is high in a particular district? (Or) Does the geographical location influence the patient category 
+These keep change over an iterative process of ontology development</COKPME:designedFor>
+        <rdfs:comment xml:lang="en">This is for analyzing the wave 2 of COVID19. 
+
+Dateset - Anonymised sample data for testing the ontology. 
+
+This is the evaluation version.
+
+The ontology will be used by analysts for finding the relative and precautionary measures that can be put in action for controlling the spread. Also, it should be able to handle the competence question like: 
+ Which properties of the patient should be considered for modeling
+ Which properties of patient changes
+ Which properties of patient confirm COVID positive
+ Do the symptom of the patient change over a time ***
+ Do the treatment provided depends on the category of patient
+ Do other comorbid conditions derive any interestingness ****
+ Which symptom is high in a particular district? (Or) Does the geographical location influence the patient category 
+These keep change over an iterative process of ontology development</rdfs:comment>
+        <rdfs:label xml:lang="en">COVID19 ontology for KARNATAKA PRIVATE MEDICAL ESTABLISHMENTS - KPME. 
+The Ontology captures the attributes capted in all the private clinics of karnataka state for analysis teh pandemic situation.</rdfs:label>
+        <rdfs:seeAlso xml:lang="en">CODO - Ontology for collection and analysis of COVID-19 data.
+This is generalized for COVID19 DATA. 
+lINK: https://www.isibang.ac.in/ns/codo/index.html
+
+
+Dutta, B. and DeBellis, M. (2020). CODO: CODO: an ontology for collection and analysis of COVID-19 data. In Proc. of 12th Int. Conf. on Knowledge Engineering and Ontology Development (KEOD), 2-4 November 2020 (accepted)</rdfs:seeAlso>
+        <owl:versionInfo xml:lang="en">1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/date"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#designedFor"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#designedFor -->
+
+    <owl:AnnotationProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#designedFor"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor">
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"/>
+        <rdfs:comment xml:lang="en">Diagnoised For ILI / COVID suspect / SARI</rdfs:comment>
+        <rdfs:label xml:lang="en">diagnoisedFor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedPatient -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedPatient">
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital"/>
+        <rdfs:comment xml:lang="en">refers to teh hsospital where patient sis admitted for diagnosis</rdfs:comment>
+        <rdfs:label xml:lang="en">hasAdmittedPatient</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo">
+        <owl:equivalentProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital"/>
+        <rdfs:comment xml:lang="en">Has Admitted hospital for COVID DIAGNOSIS</rdfs:comment>
+        <rdfs:label xml:lang="en">hasAdmittedTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory">
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"/>
+        <rdfs:comment xml:lang="en">Category refere to 3 type :
+1. COVID Suspect
+2. ILI
+3. SARI</rdfs:comment>
+        <rdfs:label xml:lang="en">hasCategory</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor"/>
+        <owl:inverseOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor"/>
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"/>
+        <rdfs:comment xml:lang="en">Has Diagnoised ILI/ SARI/ COVID</rdfs:comment>
+        <rdfs:label xml:lang="en">hasDiagnoisedFor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#hasHID -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#hasHID"/>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#hasPAddress -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#hasPAddress">
+        <owl:equivalentProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#hasPID -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#hasPID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Patient"/>
+        <rdfs:comment xml:lang="en">Every patient is assigned with the ID number as anonymize  process</rdfs:comment>
+        <rdfs:label xml:lang="en">hasPID</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN">
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Patient"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Phone number is point of reference for patient. Along with the PID we can use patient phone number for processing data</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#hasSymptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#hasSymptom">
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Patient"/>
+        <rdfs:range rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"/>
+        <rdfs:comment xml:lang="en">The symptom of patient is referred</rdfs:comment>
+        <rdfs:label xml:lang="en">hasSymptom</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#hasdistrict -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#hasdistrict">
+        <rdfs:comment>DIstrict has all teh name of karnataks state district as instances.</rdfs:comment>
+        <rdfs:label>hasDistrict</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:comment xml:lang="en">Patient admitted to the hospital for COVID TEST AND DIAGNOSIS</rdfs:comment>
+        <rdfs:label xml:lang="en">isAdmittedTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor"/>
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"/>
+        <rdfs:comment xml:lang="en">Inverse of Has Diagnoised For</rdfs:comment>
+        <rdfs:label xml:lang="en">Is Diagnoised For</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#address"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions">
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Patient"/>
+        <rdfs:range rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+        <rdfs:comment xml:lang="en">Refers to other comorbid contion that patient has. previous medical history or others health issue in parallel</rdfs:comment>
+        <rdfs:label xml:lang="en">otherComorbidConditions</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#reported_On -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#reported_On">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#DateTimeDescription"/>
+        <rdfs:comment xml:lang="en">Date on which he is diagnoised or called for COVID TEST</rdfs:comment>
+        <rdfs:label xml:lang="en">reportedOn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#sufferFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#sufferFrom">
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+        <rdfs:comment xml:lang="en">Suffer from other comorbid conditions</rdfs:comment>
+        <rdfs:label xml:lang="en">sufferFrom</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#treatmentProvided -->
+
+    <owl:ObjectProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#treatmentProvided">
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Treatment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing">
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Medicines_prescribed_with_home_quarantine_advice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Medicines_prescribed_with_home_quarantine_advice">
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">Medicines_prescribed_with_home_quarantine_advice</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Shift_to_other_hospital -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Shift_to_other_hospital">
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">Shift_to_other_hospital</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#address -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#address">
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Location"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital"/>
+                    <rdf:Description rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Patient"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Address comes with the locality, pin code and street address</rdfs:comment>
+        <rdfs:label xml:lang="en">address</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#addressLocality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#addressLocality">
+        <rdfs:subPropertyOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#address"/>
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Indicates teh district or taluk</rdfs:comment>
+        <rdfs:label xml:lang="en">addressLocality</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#area -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#area">
+        <rdfs:subPropertyOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Particluar area of district or taluk</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#district -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#district">
+        <rdfs:subPropertyOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#address"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#District"/>
+                    <rdf:Description rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Location"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">District name</rdfs:comment>
+        <rdfs:label xml:lang="en">district</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#hasID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#hasID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#hasPID"/>
+                <owl:someValuesFrom rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#PID"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Patient ID FOR REFERENCE. 
+Additionall added for teh dataset</rdfs:comment>
+        <rdfs:label xml:lang="en">PID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN"/>
+                <owl:someValuesFrom rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Phone"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Patient phone number provided during registration.
+In case of husband wife the phone number is same in most of the cases.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasPhone</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode">
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#ID"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#hasHID"/>
+                <owl:someValuesFrom rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#ID"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Hospital ID - Assigned by KPME</rdfs:comment>
+        <rdfs:label xml:lang="en">HID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#postalCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#postalCode">
+        <rdfs:subPropertyOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#address"/>
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate">
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#DateTimeDescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">admitted for diagnosis</rdfs:comment>
+        <rdfs:label xml:lang="en">reportDate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#streetAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#streetAddress">
+        <rdfs:subPropertyOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#address"/>
+        <rdfs:domain rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Street name</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">patient age is indicated in year and month</rdfs:comment>
+        <rdfs:label xml:lang="en">foaf:age</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#day -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/time#day">
+        <rdfs:subPropertyOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#DateTimeDescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#month -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/time#month">
+        <rdfs:subPropertyOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#DateTimeDescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/time#year">
+        <rdfs:subPropertyOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#DateTimeDescription"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/name">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/name"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Patient name</rdfs:comment>
+        <rdfs:label xml:lang="en">foaf:name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Age -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Age">
+        <rdfs:subClassOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Patient"/>
+        <rdfs:label xml:lang="en">Age</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"/>
+        <rdfs:comment>Coronavirus disease course - Viral disease course that is the realization of some coronavirus disease and has as a participant a coronavirus.</rdfs:comment>
+        <rdfs:label xml:lang="en">COVID19Suspect</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory"/>
+                <owl:someValuesFrom rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Patient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#ClinicalFindings -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#ClinicalFindings">
+        <rdfs:comment xml:lang="en">Initial diagnosis of patient by healthworkers.</rdfs:comment>
+        <rdfs:label xml:lang="en">Clinical findings</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition">
+        <rdfs:subClassOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#ClinicalFindings"/>
+        <rdfs:comment xml:lang="en">indicate a medical condition existing simultaneously but independently with another condition in a patient (source: Wikipedia)</rdfs:comment>
+        <rdfs:label xml:lang="en">Comorbidity Condition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis">
+        <rdfs:comment>Initial process carried when a patient visit the healthcare providers</rdfs:comment>
+        <rdfs:label xml:lang="en">Diagnosis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#District -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#District">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#district"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital"/>
+        <rdfs:comment xml:lang="en">District where hospital is located.</rdfs:comment>
+        <rdfs:label xml:lang="en">District</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Hospital -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital">
+        <rdfs:comment xml:lang="en">Healthcare facility</rdfs:comment>
+        <rdfs:comment xml:lang="en">Hospital</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#HospitalAddress -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#HospitalAddress">
+        <rdfs:subClassOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Location"/>
+        <rdfs:comment xml:lang="en">Hospital address reefer to the place. 
+In the ontology here we have 2 address-  Patient residence address and Hospital address</rdfs:comment>
+        <rdfs:label xml:lang="en">HospitalAddress</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#ID -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#ID">
+        <rdfs:subClassOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital"/>
+        <rdfs:comment xml:lang="en">Every hospital has ID assigned by the respective government authority.
+It is unique across the karnataka state.</rdfs:comment>
+        <rdfs:label xml:lang="en">ID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#ILI_category -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#ILI_category">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory"/>
+                <owl:someValuesFrom rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Patient"/>
+        <rdfs:comment xml:lang="en">Patient categorized under ILI symptom</rdfs:comment>
+        <rdfs:label xml:lang="en">ILI</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Medicines_prescribed_with_home_quarantine_advice"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"/>
+        <rdfs:comment xml:lang="en">Patients with fever and/or upper respiratory tract illness (Influenza
+Like Illness, ILI)</rdfs:comment>
+        <rdfs:label xml:lang="en">InfluenzaLikeIllness</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Location -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Location">
+        <rdfs:comment>Categorized into 2 parts
+1. PLocation - Patient Location
+2. HLocation -  Hospital/Clinic Location 
+
+Patient address indicates the address provided during the registration 
+Hospital/clinic Location Indicates the respective hospital for which patient has visited to checkpup.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Name -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Name">
+        <rdfs:subClassOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital"/>
+        <rdfs:comment xml:lang="en">Name</rdfs:comment>
+        <rdfs:comment xml:lang="en">Name of the Hospital</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition">
+        <rdfs:subClassOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition"/>
+        <rdfs:comment xml:lang="en">Other Comorbidity conditions like fever, cough, BP, etc.,</rdfs:comment>
+        <rdfs:label xml:lang="en">Other Comorbidity conditions</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#PID -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#PID">
+        <rdfs:subClassOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Patient"/>
+        <rdfs:comment xml:lang="en">Identification of Patient</rdfs:comment>
+        <rdfs:label>PID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Patient -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Patient">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory"/>
+                <owl:someValuesFrom rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor"/>
+                <owl:someValuesFrom rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Patient who is under diagnosis with symptoms of ILI/ SARI or FOR covid test</rdfs:comment>
+        <rdfs:label xml:lang="en">Patient</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress">
+        <rdfs:subClassOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Location"/>
+        <rdfs:comment xml:lang="en">Residential address/address provided by patient during diagnosis</rdfs:comment>
+        <rdfs:label xml:lang="en">PatientAddress</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Phone -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Phone">
+        <rdfs:subClassOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Patient"/>
+        <rdfs:label xml:lang="en">Phone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#SARI_category -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#SARI_category">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory"/>
+                <owl:someValuesFrom rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Patient"/>
+        <rdfs:comment xml:lang="en">Patient categorized under SARI</rdfs:comment>
+        <rdfs:label xml:lang="en">SARI</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Shift_to_other_hospital"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"/>
+        <rdfs:comment xml:lang="en">&quot;Severe Pneumonia (with respiratory rate ≥30/minute and/or SpO2 &lt; 90% in room air) or ARDS or Septic shock.</rdfs:comment>
+        <rdfs:label xml:lang="en">SeverAcuteRespiratoryInfection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Treatment -->
+
+    <owl:Class rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Treatment">
+        <rdfs:subClassOf rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Hospital"/>
+        <rdfs:comment xml:lang="en">Treatment provided to teh patient by the respective hospital.</rdfs:comment>
+        <rdfs:label xml:lang="en">Treatment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#DateTimeDescription -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#DateTimeDescription">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#reported_On"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#DateTimeDescription"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">This refers to the patient admitted or diagnoised data and time</rdfs:comment>
+        <rdfs:label xml:lang="en">AdmittedDate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent">
+        <rdfs:comment xml:lang="en">An agent is person,  or physical artifact</rdfs:comment>
+        <rdfs:label xml:lang="en">Agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:comment xml:lang="en">Patient / Human</rdfs:comment>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#ASYMPTOMATIC -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#ASYMPTOMATIC">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Acidity -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Acidity">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#AcuteRespiratoryDistressSyndrome -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#AcuteRespiratoryDistressSyndrome">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Anemia -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Anemia">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Bagalkot -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Bagalkot"/>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Bangalore_Rural -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Bangalore_Rural"/>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Bangalore_Urban -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Bangalore_Urban"/>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Belgaum -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Belgaum"/>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Breathlessness -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Breathlessness">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#BronchialAsthma -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#BronchialAsthma">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#COLUMBIA_ASIA_HOSPITAL_HEBBAL -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#COLUMBIA_ASIA_HOSPITAL_HEBBAL"/>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#COPD -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#COPD">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect"/>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing"/>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Cold -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Cold">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Cough -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Cough">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#DIARRHOEA -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#DIARRHOEA">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Diabetic -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Diabetic">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#DryCough -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#DryCough">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#ExpectorationBreathlessness -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#ExpectorationBreathlessness">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Fever -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Fever">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#FeverCough -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#FeverCough">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#FeverCoughWheezing -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#FeverCoughWheezing">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessBodyacheEpigastricPain -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessBodyacheEpigastricPain">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessPainAbdomen -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessPainAbdomen">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#H16472 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#H16472"/>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Heart_Disease -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Heart_Disease">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Hypertension -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Hypertension">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#HypoThyorid -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#HypoThyorid">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#ILI -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#ILI">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#LooseStoolsAssoicatedWithFever -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#LooseStoolsAssoicatedWithFever">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#NIL -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#NIL">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Other -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Other">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition"/>
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#PNEUMONIA -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#PNEUMONIA">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#PneumoniawithLRTI -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#PneumoniawithLRTI">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Screaming -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Screaming">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#ViralFever -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#ViralFever">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Patient"/>
+        <COKPME:hasAdmittedTo rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#COLUMBIA_ASIA_HOSPITAL_HEBBAL"/>
+        <COKPME:hasAdmittedTo rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#H16472"/>
+        <COKPME:hasCategory rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect"/>
+        <COKPME:otherComorbidConditions rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#forCovidTest"/>
+        <COKPME:Call_to_Emergency_108_for_Covid-19_testing rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></COKPME:Call_to_Emergency_108_for_Covid-19_testing>
+        <COKPME:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XXXX00000001</COKPME:hasID>
+        <COKPME:hasPhone rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9900990099</COKPME:hasPhone>
+        <COKPME:hospitalCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H16472</COKPME:hospitalCode>
+        <time:month rdf:datatype="http://www.w3.org/2001/XMLSchema#string">March</time:month>
+        <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ram Gopal</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#forCovidTest -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#forCovidTest">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#2147483647 -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#2147483647">
+        <rdf:type rdf:resource="http://www.iiitdwd.ac.in/ACB/COKPME#Phone"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2147483647</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iiitdwd.ac.in/ACB/COKPME#Covid-19_(Suspect) -->
+
+    <owl:NamedIndividual rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Covid-19_(Suspect)"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect">
+        <rdfs:comment xml:lang="en">Person who is categorized as COVID Suspect.</rdfs:comment>
+        <rdfs:label xml:lang="en">COVIDTest</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing">
+        <rdfs:label xml:lang="en">Call_to_Emergency_108_for_Covid-19_testing</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

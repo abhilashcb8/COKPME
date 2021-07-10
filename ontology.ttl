@@ -1,0 +1,835 @@
+@prefix : <http://www.iiitdwd.ac.in/ACB/COKPME#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.iiitdwd.ac.in/ACB/COKPME> .
+
+<http://www.iiitdwd.ac.in/ACB/COKPME> rdf:type owl:Ontology ;
+                                       owl:imports <http://purl.org/NET/dc_owl2dl/terms> ;
+                                       <http://purl.org/dc/elements/1.1/creator> "Abhilash C B (IIIT Dharwad)"@en ,
+                                                                                 "Kavi Mahesh (IIIT Dharwad)"@en ;
+                                       <http://purl.org/dc/elements/1.1/date> "July 2021"@en ;
+                                       <http://purl.org/dc/elements/1.1/publisher> "IIIT Dharwad"@en ;
+                                       <http://purl.org/dc/elements/1.1/title> "COKPME - COVID19 Ontology for analysing Karnataka Private Medical Establishment data"@en ;
+                                       :designedFor """The ontology will be used by analyst for finding the relative and precautionary measures that can be put in action for controlling the spread. Also, it should be able to handle the competence question like: 
+ Which properties of the patient should be considered for modeling
+ Which properties of patient changes
+ Which properties of patient confirms COVID positive
+ Do the symptom of patient changes over a time ***
+ Do the treatment provided depends on the category of patient
+ Does other comorbid conditions derive any interestingness ****
+ Which symptom is high in a particular district? (Or) Does the geographical location influence the patient category 
+These keep change over an iterative process of ontology development"""@en ;
+                                       rdfs:comment """This is for analyzing the wave 2 of COVID19. 
+
+Dateset - Anonymised sample data for testing the ontology. 
+
+This is the evaluation version.
+
+The ontology will be used by analysts for finding the relative and precautionary measures that can be put in action for controlling the spread. Also, it should be able to handle the competence question like: 
+ Which properties of the patient should be considered for modeling
+ Which properties of patient changes
+ Which properties of patient confirm COVID positive
+ Do the symptom of the patient change over a time ***
+ Do the treatment provided depends on the category of patient
+ Do other comorbid conditions derive any interestingness ****
+ Which symptom is high in a particular district? (Or) Does the geographical location influence the patient category 
+These keep change over an iterative process of ontology development"""@en ;
+                                       rdfs:label """COVID19 ontology for KARNATAKA PRIVATE MEDICAL ESTABLISHMENTS - KPME. 
+The Ontology captures the attributes capted in all the private clinics of karnataka state for analysis teh pandemic situation."""@en ;
+                                       rdfs:seeAlso """CODO - Ontology for collection and analysis of COVID-19 data.
+This is generalized for COVID19 DATA. 
+lINK: https://www.isibang.ac.in/ns/codo/index.html
+
+
+Dutta, B. and DeBellis, M. (2020). CODO: CODO: an ontology for collection and analysis of COVID-19 data. In Proc. of 12th Int. Conf. on Knowledge Engineering and Ontology Development (KEOD), 2-4 November 2020 (accepted)"""@en ;
+                                       owl:versionInfo "1.0"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty ;
+                                   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ,
+                                                      :designedFor .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#designedFor
+:designedFor rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor
+:diagnoisedFor rdf:type owl:ObjectProperty ;
+               rdfs:domain :Diagnosis ;
+               rdfs:comment "Diagnoised For ILI / COVID suspect / SARI"@en ;
+               rdfs:label "diagnoisedFor"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedPatient
+:hasAdmittedPatient rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Hospital ;
+                    rdfs:comment "refers to teh hsospital where patient sis admitted for diagnosis"@en ;
+                    rdfs:label "hasAdmittedPatient"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo
+:hasAdmittedTo rdf:type owl:ObjectProperty ;
+               owl:equivalentProperty :isAdmittedTo ,
+                                      [ owl:inverseOf :isAdmittedTo
+                                      ] ;
+               rdfs:domain :Hospital ;
+               rdfs:comment "Has Admitted hospital for COVID DIAGNOSIS"@en ;
+               rdfs:label "hasAdmittedTo"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory
+:hasCategory rdf:type owl:ObjectProperty ;
+             rdfs:domain :Diagnosis ;
+             rdfs:comment """Category refere to 3 type :
+1. COVID Suspect
+2. ILI
+3. SARI"""@en ;
+             rdfs:label "hasCategory"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor
+:hasDiagnoisedFor rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :diagnoisedFor ;
+                  owl:inverseOf :isDiagnoisedFor ;
+                  rdfs:domain :Diagnosis ;
+                  rdfs:comment "Has Diagnoised ILI/ SARI/ COVID"@en ;
+                  rdfs:label "hasDiagnoisedFor"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#hasHID
+:hasHID rdf:type owl:ObjectProperty .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#hasPAddress
+:hasPAddress rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty :isLocatedAt ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :PatientAddress ;
+             rdfs:range [ rdf:type owl:Restriction ;
+                          owl:onProperty :isLocatedAt ;
+                          owl:someValuesFrom :PatientAddress
+                        ] .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#hasPID
+:hasPID rdf:type owl:ObjectProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :Patient ;
+        rdfs:comment "Every patient is assigned with the ID number as anonymize  process"@en ;
+        rdfs:label "hasPID"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN
+:hasPhoneN rdf:type owl:ObjectProperty ;
+           rdfs:domain :Patient ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasPhone ;
+                         owl:someValuesFrom xsd:string
+                       ] ;
+           rdfs:range [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasPhone ;
+                        owl:someValuesFrom xsd:string
+                      ] ;
+           rdfs:comment "Phone number is point of reference for patient. Along with the PID we can use patient phone number for processing data"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#hasSymptom
+:hasSymptom rdf:type owl:ObjectProperty ;
+            rdfs:domain :Patient ;
+            rdfs:range :Diagnosis ;
+            rdfs:comment "The symptom of patient is referred"@en ;
+            rdfs:label "hasSymptom"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#hasdistrict
+:hasdistrict rdf:type owl:ObjectProperty ;
+             rdfs:comment "DIstrict has all teh name of karnataks state district as instances." ;
+             rdfs:label "hasDistrict" .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo
+:isAdmittedTo rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:InverseFunctionalProperty ;
+              rdfs:comment "Patient admitted to the hospital for COVID TEST AND DIAGNOSIS"@en ;
+              rdfs:label "isAdmittedTo"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor
+:isDiagnoisedFor rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :diagnoisedFor ;
+                 rdfs:domain :Diagnosis ;
+                 rdfs:comment "Inverse of Has Diagnoised For"@en ;
+                 rdfs:label "Is Diagnoised For"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt
+:isLocatedAt rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:InverseFunctionalProperty ;
+             rdfs:domain :PatientAddress ;
+             rdfs:range [ rdf:type owl:Restriction ;
+                          owl:onProperty :address ;
+                          owl:someValuesFrom xsd:string
+                        ] .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions
+:otherComorbidConditions rdf:type owl:ObjectProperty ;
+                         rdfs:domain :Patient ;
+                         rdfs:range :OtherComorbidityCondition ;
+                         rdfs:comment "Refers to other comorbid contion that patient has. previous medical history or others health issue in parallel"@en ;
+                         rdfs:label "otherComorbidConditions"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#reported_On
+:reported_On rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain <http://www.w3.org/2006/time#DateTimeDescription> ;
+             rdfs:comment "Date on which he is diagnoised or called for COVID TEST"@en ;
+             rdfs:label "reportedOn"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#sufferFrom
+:sufferFrom rdf:type owl:ObjectProperty ;
+            rdfs:domain :OtherComorbidityCondition ;
+            rdfs:comment "Suffer from other comorbid conditions"@en ;
+            rdfs:label "sufferFrom"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#treatmentProvided
+:treatmentProvided rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Treatment .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing
+:Call_to_Emergency_108_for_Covid-19_testing rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain :Patient ;
+                                            rdfs:range xsd:string .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Medicines_prescribed_with_home_quarantine_advice
+:Medicines_prescribed_with_home_quarantine_advice rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain :Patient ;
+                                                  rdfs:range xsd:string ;
+                                                  rdfs:label "Medicines_prescribed_with_home_quarantine_advice"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Shift_to_other_hospital
+:Shift_to_other_hospital rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Patient ;
+                         rdfs:range xsd:string ;
+                         rdfs:label "Shift_to_other_hospital"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#address
+:address rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Location ,
+                     [ rdf:type owl:Class ;
+                       owl:unionOf ( :Hospital
+                                     :Patient
+                                   )
+                     ] ;
+         rdfs:range xsd:string ;
+         rdfs:comment "Address comes with the locality, pin code and street address"@en ;
+         rdfs:label "address"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#addressLocality
+:addressLocality rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf :address ;
+                 rdfs:domain :Location ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Indicates teh district or taluk" ;
+                 rdfs:label "addressLocality"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#area
+:area rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :address ;
+      rdfs:range xsd:string ;
+      rdfs:comment "Particluar area of district or taluk" .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#district
+:district rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :address ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :District
+                                      :Location
+                                    )
+                      ] ;
+          rdfs:range xsd:string ;
+          rdfs:comment "District name"@en ;
+          rdfs:label "district"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#hasID
+:hasID rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty ;
+       rdfs:domain [ rdf:type owl:Restriction ;
+                     owl:onProperty :hasPID ;
+                     owl:someValuesFrom :PID
+                   ] ;
+       rdfs:range xsd:string ;
+       rdfs:comment """Patient ID FOR REFERENCE. 
+Additionall added for teh dataset"""@en ;
+       rdfs:label "PID"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone
+:hasPhone rdf:type owl:DatatypeProperty ;
+          rdfs:domain [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasPhoneN ;
+                        owl:someValuesFrom :Phone
+                      ] ;
+          rdfs:range xsd:string ;
+          rdfs:comment """Patient phone number provided during registration.
+In case of husband wife the phone number is same in most of the cases."""@en ;
+          rdfs:label "hasPhone"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode
+:hospitalCode rdf:type owl:DatatypeProperty ;
+              rdfs:domain :ID ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasHID ;
+                            owl:someValuesFrom :ID
+                          ] ;
+              rdfs:range xsd:string ;
+              rdfs:comment "Hospital ID - Assigned by KPME"@en ;
+              rdfs:label "HID"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#postalCode
+:postalCode rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :address ;
+            rdfs:domain :Location ;
+            rdfs:range xsd:integer .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate
+:reportedDate rdf:type owl:DatatypeProperty ;
+              rdfs:domain <http://www.w3.org/2006/time#DateTimeDescription> ;
+              rdfs:range xsd:string ;
+              rdfs:comment "admitted for diagnosis"@en ;
+              rdfs:label "reportDate"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#streetAddress
+:streetAddress rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :address ;
+               rdfs:domain :Location ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Street name" .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age
+:foaf:age rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain [ rdf:type owl:Restriction ;
+                        owl:onProperty :foaf:age ;
+                        owl:someValuesFrom xsd:decimal
+                      ] ;
+          rdfs:range xsd:integer ;
+          rdfs:comment "patient age is indicated in year and month"@en ;
+          rdfs:label "foaf:age"@en .
+
+
+###  http://www.w3.org/2006/time#day
+<http://www.w3.org/2006/time#day> rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf :reportedDate ;
+                                  rdfs:domain <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                  rdfs:range xsd:int .
+
+
+###  http://www.w3.org/2006/time#month
+<http://www.w3.org/2006/time#month> rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf :reportedDate ;
+                                    rdfs:domain <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                    rdfs:range xsd:string .
+
+
+###  http://www.w3.org/2006/time#year
+<http://www.w3.org/2006/time#year> rdf:type owl:DatatypeProperty ;
+                                   rdfs:subPropertyOf :reportedDate ;
+                                   rdfs:domain <http://www.w3.org/2006/time#DateTimeDescription> ;
+                                   rdfs:range xsd:integer .
+
+
+###  http://xmlns.com/foaf/0.1/name
+<http://xmlns.com/foaf/0.1/name> rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain [ rdf:type owl:Restriction ;
+                                               owl:onProperty <http://xmlns.com/foaf/0.1/name> ;
+                                               owl:someValuesFrom xsd:string
+                                             ] ;
+                                 rdfs:range xsd:string ;
+                                 rdfs:comment "Patient name"@en ;
+                                 rdfs:label "foaf:name"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Age
+:Age rdf:type owl:Class ;
+     rdfs:subClassOf :Patient ;
+     rdfs:label "Age"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect
+:COVID-19_Suspect rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty :Call_to_Emergency_108_for_Covid-19_testing ;
+                                        owl:someValuesFrom xsd:string
+                                      ] ;
+                  rdfs:subClassOf :Diagnosis ;
+                  rdfs:comment "Coronavirus disease course - Viral disease course that is the realization of some coronavirus disease and has as a participant a coronavirus." ;
+                  rdfs:label "COVID19Suspect"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect
+:COVID19Suspect rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasCategory ;
+                                      owl:someValuesFrom :COVID-19_Suspect
+                                    ] ;
+                rdfs:subClassOf :Patient .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#ClinicalFindings
+:ClinicalFindings rdf:type owl:Class ;
+                  rdfs:comment "Initial diagnosis of patient by healthworkers."@en ;
+                  rdfs:label "Clinical findings"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition
+:ComorbidityCondition rdf:type owl:Class ;
+                      rdfs:subClassOf :ClinicalFindings ;
+                      rdfs:comment "indicate a medical condition existing simultaneously but independently with another condition in a patient (source: Wikipedia)"@en ;
+                      rdfs:label "Comorbidity Condition"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis
+:Diagnosis rdf:type owl:Class ;
+           rdfs:comment "Initial process carried when a patient visit the healthcare providers" ;
+           rdfs:label "Diagnosis"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#District
+:District rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :district ;
+                                owl:someValuesFrom xsd:string
+                              ] ;
+          rdfs:subClassOf :Hospital ;
+          rdfs:comment "District where hospital is located."@en ;
+          rdfs:label "District"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Hospital
+:Hospital rdf:type owl:Class ;
+          rdfs:comment "Healthcare facility"@en ,
+                       "Hospital"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#HospitalAddress
+:HospitalAddress rdf:type owl:Class ;
+                 rdfs:subClassOf :Location ;
+                 rdfs:comment """Hospital address reefer to the place. 
+In the ontology here we have 2 address-  Patient residence address and Hospital address"""@en ;
+                 rdfs:label "HospitalAddress"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#ID
+:ID rdf:type owl:Class ;
+    rdfs:subClassOf :Hospital ;
+    rdfs:comment """Every hospital has ID assigned by the respective government authority.
+It is unique across the karnataka state."""@en ;
+    rdfs:label "ID"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#ILI_category
+:ILI_category rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasCategory ;
+                                    owl:someValuesFrom :Influenza_Like_Illness
+                                  ] ;
+              rdfs:subClassOf :Patient ;
+              rdfs:comment "Patient categorized under ILI symptom"@en ;
+              rdfs:label "ILI"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness
+:Influenza_Like_Illness rdf:type owl:Class ;
+                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                              owl:onProperty :Medicines_prescribed_with_home_quarantine_advice ;
+                                              owl:someValuesFrom xsd:string
+                                            ] ;
+                        rdfs:subClassOf :Diagnosis ;
+                        rdfs:comment """Patients with fever and/or upper respiratory tract illness (Influenza
+Like Illness, ILI)"""@en ;
+                        rdfs:label "InfluenzaLikeIllness"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Location
+:Location rdf:type owl:Class ;
+          rdfs:comment """Categorized into 2 parts
+1. PLocation - Patient Location
+2. HLocation -  Hospital/Clinic Location 
+
+Patient address indicates the address provided during the registration 
+Hospital/clinic Location Indicates the respective hospital for which patient has visited to checkpup.""" .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Name
+:Name rdf:type owl:Class ;
+      rdfs:subClassOf :Hospital ;
+      rdfs:comment "Name"@en ,
+                   "Name of the Hospital"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition
+:OtherComorbidityCondition rdf:type owl:Class ;
+                           rdfs:subClassOf :ComorbidityCondition ;
+                           rdfs:comment "Other Comorbidity conditions like fever, cough, BP, etc.,"@en ;
+                           rdfs:label "Other Comorbidity conditions"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#PID
+:PID rdf:type owl:Class ;
+     rdfs:subClassOf :Patient ;
+     rdfs:comment "Identification of Patient"@en ;
+     rdfs:label "PID" .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Patient
+:Patient rdf:type owl:Class ;
+         rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAdmittedTo ;
+                           owl:someValuesFrom :Hospital
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasCategory ;
+                           owl:someValuesFrom :Diagnosis
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasDiagnoisedFor ;
+                           owl:someValuesFrom :Diagnosis
+                         ] ;
+         rdfs:comment "Patient who is under diagnosis with symptoms of ILI/ SARI or FOR covid test"@en ;
+         rdfs:label "Patient"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress
+:PatientAddress rdf:type owl:Class ;
+                rdfs:subClassOf :Location ;
+                rdfs:comment "Residential address/address provided by patient during diagnosis"@en ;
+                rdfs:label "PatientAddress"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Phone
+:Phone rdf:type owl:Class ;
+       rdfs:subClassOf :Patient ;
+       rdfs:label "Phone"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#SARI_category
+:SARI_category rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasCategory ;
+                                     owl:someValuesFrom :Sever_Acute_Respiratory_Infection
+                                   ] ;
+               rdfs:subClassOf :Patient ;
+               rdfs:comment "Patient categorized under SARI"@en ;
+               rdfs:label "SARI"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection
+:Sever_Acute_Respiratory_Infection rdf:type owl:Class ;
+                                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :Shift_to_other_hospital ;
+                                                         owl:someValuesFrom xsd:string
+                                                       ] ;
+                                   rdfs:subClassOf :Diagnosis ;
+                                   rdfs:comment "\"Severe Pneumonia (with respiratory rate ≥30/minute and/or SpO2 < 90% in room air) or ARDS or Septic shock."@en ;
+                                   rdfs:label "SeverAcuteRespiratoryInfection"@en .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Treatment
+:Treatment rdf:type owl:Class ;
+           rdfs:subClassOf :Hospital ;
+           rdfs:comment "Treatment provided to teh patient by the respective hospital."@en ;
+           rdfs:label "Treatment"@en .
+
+
+###  http://www.w3.org/2006/time#DateTimeDescription
+<http://www.w3.org/2006/time#DateTimeDescription> rdf:type owl:Class ;
+                                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :reported_On ;
+                                                                    owl:someValuesFrom <http://www.w3.org/2006/time#DateTimeDescription>
+                                                                  ] ;
+                                                  rdfs:comment "This refers to the patient admitted or diagnoised data and time"@en ;
+                                                  rdfs:label "AdmittedDate"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class ;
+                                  rdfs:comment "An agent is person,  or physical artifact"@en ;
+                                  rdfs:label "Agent"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
+                                   rdfs:comment "Patient / Human"@en ;
+                                   rdfs:label "Person"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#ASYMPTOMATIC
+:ASYMPTOMATIC rdf:type owl:NamedIndividual ,
+                       :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Acidity
+:Acidity rdf:type owl:NamedIndividual ,
+                  :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#AcuteRespiratoryDistressSyndrome
+:AcuteRespiratoryDistressSyndrome rdf:type owl:NamedIndividual ,
+                                           :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Anemia
+:Anemia rdf:type owl:NamedIndividual ,
+                 :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Bagalkot
+:Bagalkot rdf:type owl:NamedIndividual .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Bangalore_Rural
+:Bangalore_Rural rdf:type owl:NamedIndividual .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Bangalore_Urban
+:Bangalore_Urban rdf:type owl:NamedIndividual .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Belgaum
+:Belgaum rdf:type owl:NamedIndividual .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Breathlessness
+:Breathlessness rdf:type owl:NamedIndividual ,
+                         :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#BronchialAsthma
+:BronchialAsthma rdf:type owl:NamedIndividual ,
+                          :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#COLUMBIA_ASIA_HOSPITAL_HEBBAL
+:COLUMBIA_ASIA_HOSPITAL_HEBBAL rdf:type owl:NamedIndividual .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#COPD
+:COPD rdf:type owl:NamedIndividual ,
+               :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect
+:COVID19Suspect rdf:type owl:NamedIndividual .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing
+:Call_to_Emergency_108_for_Covid-19_testing rdf:type owl:NamedIndividual .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Cold
+:Cold rdf:type owl:NamedIndividual ,
+               :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Cough
+:Cough rdf:type owl:NamedIndividual ,
+                :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#DIARRHOEA
+:DIARRHOEA rdf:type owl:NamedIndividual ,
+                    :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Diabetic
+:Diabetic rdf:type owl:NamedIndividual ,
+                   :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#DryCough
+:DryCough rdf:type owl:NamedIndividual ,
+                   :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#ExpectorationBreathlessness
+:ExpectorationBreathlessness rdf:type owl:NamedIndividual ,
+                                      :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Fever
+:Fever rdf:type owl:NamedIndividual ,
+                :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#FeverCough
+:FeverCough rdf:type owl:NamedIndividual ,
+                     :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#FeverCoughWheezing
+:FeverCoughWheezing rdf:type owl:NamedIndividual ,
+                             :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessBodyacheEpigastricPain
+:FeverWeaknessBodyacheEpigastricPain rdf:type owl:NamedIndividual ,
+                                              :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessPainAbdomen
+:FeverWeaknessPainAbdomen rdf:type owl:NamedIndividual ,
+                                   :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#H16472
+:H16472 rdf:type owl:NamedIndividual .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Heart_Disease
+:Heart_Disease rdf:type owl:NamedIndividual ,
+                        :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Hypertension
+:Hypertension rdf:type owl:NamedIndividual ,
+                       :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#HypoThyorid
+:HypoThyorid rdf:type owl:NamedIndividual ,
+                      :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#ILI
+:ILI rdf:type owl:NamedIndividual ,
+              :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#LooseStoolsAssoicatedWithFever
+:LooseStoolsAssoicatedWithFever rdf:type owl:NamedIndividual ,
+                                         :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#NIL
+:NIL rdf:type owl:NamedIndividual ,
+              :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Other
+:Other rdf:type owl:NamedIndividual ,
+                :ComorbidityCondition ,
+                :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#PNEUMONIA
+:PNEUMONIA rdf:type owl:NamedIndividual ,
+                    :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#PneumoniawithLRTI
+:PneumoniawithLRTI rdf:type owl:NamedIndividual ,
+                            :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Screaming
+:Screaming rdf:type owl:NamedIndividual ,
+                    :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#ViralFever
+:ViralFever rdf:type owl:NamedIndividual ,
+                     :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001
+:XXXX00000001 rdf:type owl:NamedIndividual ,
+                       :Patient ;
+              :hasAdmittedTo :COLUMBIA_ASIA_HOSPITAL_HEBBAL ,
+                             :H16472 ;
+              :hasCategory :COVID19Suspect ;
+              :otherComorbidConditions :forCovidTest ;
+              :Call_to_Emergency_108_for_Covid-19_testing "" ;
+              :hasID "XXXX00000001" ;
+              :hasPhone "9900990099" ;
+              :hospitalCode "H16472" ;
+              <http://www.w3.org/2006/time#month> "March" ;
+              <http://xmlns.com/foaf/0.1/name> "Ram Gopal" .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#forCovidTest
+:forCovidTest rdf:type owl:NamedIndividual ,
+                       :OtherComorbidityCondition .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#2147483647
+<http://www.iiitdwd.ac.in/ACB/COKPME#2147483647> rdf:type owl:NamedIndividual ,
+                                                          :Phone ;
+                                                 rdfs:label "2147483647" .
+
+
+###  http://www.iiitdwd.ac.in/ACB/COKPME#Covid-19_(Suspect)
+<http://www.iiitdwd.ac.in/ACB/COKPME#Covid-19_(Suspect)> rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:COVID19Suspect rdfs:comment "Person who is categorized as COVID Suspect."@en ;
+                rdfs:label "COVIDTest"@en .
+
+
+:Call_to_Emergency_108_for_Covid-19_testing rdfs:label "Call_to_Emergency_108_for_Covid-19_testing"@en .
+
+
+###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

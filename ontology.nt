@@ -1,0 +1,716 @@
+<http://www.iiitdwd.ac.in/ACB/COKPME> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://www.iiitdwd.ac.in/ACB/COKPME> <http://www.w3.org/2002/07/owl#imports> <http://purl.org/NET/dc_owl2dl/terms> .
+<http://www.iiitdwd.ac.in/ACB/COKPME> <http://purl.org/dc/elements/1.1/creator> "Abhilash C B (IIIT Dharwad)"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME> <http://purl.org/dc/elements/1.1/creator> "Kavi Mahesh (IIIT Dharwad)"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME> <http://purl.org/dc/elements/1.1/date> "July 2021"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME> <http://purl.org/dc/elements/1.1/publisher> "IIIT Dharwad"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME> <http://purl.org/dc/elements/1.1/title> "COKPME - COVID19 Ontology for analysing Karnataka Private Medical Establishment data"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME> <http://www.iiitdwd.ac.in/ACB/COKPME#designedFor> "The ontology will be used by analyst for finding the relative and precautionary measures that can be put in action for controlling the spread. Also, it should be able to handle the competence question like: \n Which properties of the patient should be considered for modeling\n Which properties of patient changes\n Which properties of patient confirms COVID positive\n Do the symptom of patient changes over a time ***\n Do the treatment provided depends on the category of patient\n Does other comorbid conditions derive any interestingness ****\n Which symptom is high in a particular district? (Or) Does the geographical location influence the patient category \nThese keep change over an iterative process of ontology development"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME> <http://www.w3.org/2000/01/rdf-schema#comment> "This is for analyzing the wave 2 of COVID19. \n\nDateset - Anonymised sample data for testing the ontology. \n\nThis is the evaluation version.\n\nThe ontology will be used by analysts for finding the relative and precautionary measures that can be put in action for controlling the spread. Also, it should be able to handle the competence question like: \n Which properties of the patient should be considered for modeling\n Which properties of patient changes\n Which properties of patient confirm COVID positive\n Do the symptom of the patient change over a time ***\n Do the treatment provided depends on the category of patient\n Do other comorbid conditions derive any interestingness ****\n Which symptom is high in a particular district? (Or) Does the geographical location influence the patient category \nThese keep change over an iterative process of ontology development"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME> <http://www.w3.org/2000/01/rdf-schema#label> "COVID19 ontology for KARNATAKA PRIVATE MEDICAL ESTABLISHMENTS - KPME. \nThe Ontology captures the attributes capted in all the private clinics of karnataka state for analysis teh pandemic situation."@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "CODO - Ontology for collection and analysis of COVID-19 data.\nThis is generalized for COVID19 DATA. \nlINK: https://www.isibang.ac.in/ns/codo/index.html\n\n\nDutta, B. and DeBellis, M. (2020). CODO: CODO: an ontology for collection and analysis of COVID-19 data. In Proc. of 12th Int. Conf. on Knowledge Engineering and Ontology Development (KEOD), 2-4 November 2020 (accepted)"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME> <http://www.w3.org/2002/07/owl#versionInfo> "1.0"@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/dc/terms/license> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/elements/1.1/date> .
+<http://purl.org/dc/terms/license> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.iiitdwd.ac.in/ACB/COKPME#designedFor> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#designedFor
+<http://www.iiitdwd.ac.in/ACB/COKPME#designedFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor
+<http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Diagnoised For ILI / COVID suspect / SARI"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor> <http://www.w3.org/2000/01/rdf-schema#label> "diagnoisedFor"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedPatient
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedPatient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedPatient> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Hospital> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedPatient> <http://www.w3.org/2000/01/rdf-schema#comment> "refers to teh hsospital where patient sis admitted for diagnosis"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedPatient> <http://www.w3.org/2000/01/rdf-schema#label> "hasAdmittedPatient"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo> <http://www.w3.org/2002/07/owl#equivalentProperty> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#inverseOf> <http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Hospital> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Has Admitted hospital for COVID DIAGNOSIS"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo> <http://www.w3.org/2000/01/rdf-schema#label> "hasAdmittedTo"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Category refere to 3 type :\n1. COVID Suspect\n2. ILI\n3. SARI"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory> <http://www.w3.org/2000/01/rdf-schema#label> "hasCategory"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Has Diagnoised ILI/ SARI/ COVID"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor> <http://www.w3.org/2000/01/rdf-schema#label> "hasDiagnoisedFor"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#hasHID
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasHID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#hasPAddress
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPAddress> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPAddress> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPAddress> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPAddress> <http://www.w3.org/2000/01/rdf-schema#range> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt> .
+_:genid2 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#hasPID
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPID> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Patient> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPID> <http://www.w3.org/2000/01/rdf-schema#comment> "Every patient is assigned with the ID number as anonymize  process"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPID> <http://www.w3.org/2000/01/rdf-schema#label> "hasPID"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Patient> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone> .
+_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN> <http://www.w3.org/2000/01/rdf-schema#range> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone> .
+_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN> <http://www.w3.org/2000/01/rdf-schema#comment> "Phone number is point of reference for patient. Along with the PID we can use patient phone number for processing data"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#hasSymptom
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasSymptom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasSymptom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Patient> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasSymptom> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasSymptom> <http://www.w3.org/2000/01/rdf-schema#comment> "The symptom of patient is referred"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasSymptom> <http://www.w3.org/2000/01/rdf-schema#label> "hasSymptom"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#hasdistrict
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasdistrict> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasdistrict> <http://www.w3.org/2000/01/rdf-schema#comment> "DIstrict has all teh name of karnataks state district as instances." .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasdistrict> <http://www.w3.org/2000/01/rdf-schema#label> "hasDistrict" .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo
+<http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Patient admitted to the hospital for COVID TEST AND DIAGNOSIS"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo> <http://www.w3.org/2000/01/rdf-schema#label> "isAdmittedTo"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor
+<http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse of Has Diagnoised For"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor> <http://www.w3.org/2000/01/rdf-schema#label> "Is Diagnoised For"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt
+<http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt> <http://www.w3.org/2000/01/rdf-schema#range> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#address> .
+_:genid5 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions
+<http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Patient> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to other comorbid contion that patient has. previous medical history or others health issue in parallel"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions> <http://www.w3.org/2000/01/rdf-schema#label> "otherComorbidConditions"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#reported_On
+<http://www.iiitdwd.ac.in/ACB/COKPME#reported_On> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#reported_On> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#reported_On> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#DateTimeDescription> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#reported_On> <http://www.w3.org/2000/01/rdf-schema#comment> "Date on which he is diagnoised or called for COVID TEST"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#reported_On> <http://www.w3.org/2000/01/rdf-schema#label> "reportedOn"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#sufferFrom
+<http://www.iiitdwd.ac.in/ACB/COKPME#sufferFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#sufferFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#sufferFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Suffer from other comorbid conditions"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#sufferFrom> <http://www.w3.org/2000/01/rdf-schema#label> "sufferFrom"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#treatmentProvided
+<http://www.iiitdwd.ac.in/ACB/COKPME#treatmentProvided> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#treatmentProvided> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Treatment> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing
+<http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Patient> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Medicines_prescribed_with_home_quarantine_advice
+<http://www.iiitdwd.ac.in/ACB/COKPME#Medicines_prescribed_with_home_quarantine_advice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Medicines_prescribed_with_home_quarantine_advice> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Patient> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Medicines_prescribed_with_home_quarantine_advice> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Medicines_prescribed_with_home_quarantine_advice> <http://www.w3.org/2000/01/rdf-schema#label> "Medicines_prescribed_with_home_quarantine_advice"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Shift_to_other_hospital
+<http://www.iiitdwd.ac.in/ACB/COKPME#Shift_to_other_hospital> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Shift_to_other_hospital> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Patient> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Shift_to_other_hospital> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Shift_to_other_hospital> <http://www.w3.org/2000/01/rdf-schema#label> "Shift_to_other_hospital"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#address
+<http://www.iiitdwd.ac.in/ACB/COKPME#address> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#address> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Location> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#address> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid6 <http://www.w3.org/2002/07/owl#unionOf> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.iiitdwd.ac.in/ACB/COKPME#Hospital> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.iiitdwd.ac.in/ACB/COKPME#Patient> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#address> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#address> <http://www.w3.org/2000/01/rdf-schema#comment> "Address comes with the locality, pin code and street address"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#address> <http://www.w3.org/2000/01/rdf-schema#label> "address"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#addressLocality
+<http://www.iiitdwd.ac.in/ACB/COKPME#addressLocality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#addressLocality> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.iiitdwd.ac.in/ACB/COKPME#address> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#addressLocality> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Location> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#addressLocality> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#addressLocality> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates teh district or taluk" .
+<http://www.iiitdwd.ac.in/ACB/COKPME#addressLocality> <http://www.w3.org/2000/01/rdf-schema#label> "addressLocality"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#area
+<http://www.iiitdwd.ac.in/ACB/COKPME#area> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#area> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.iiitdwd.ac.in/ACB/COKPME#address> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#area> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#area> <http://www.w3.org/2000/01/rdf-schema#comment> "Particluar area of district or taluk" .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#district
+<http://www.iiitdwd.ac.in/ACB/COKPME#district> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#district> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.iiitdwd.ac.in/ACB/COKPME#address> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#district> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid9 <http://www.w3.org/2002/07/owl#unionOf> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.iiitdwd.ac.in/ACB/COKPME#District> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.iiitdwd.ac.in/ACB/COKPME#Location> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#district> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#district> <http://www.w3.org/2000/01/rdf-schema#comment> "District name"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#district> <http://www.w3.org/2000/01/rdf-schema#label> "district"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#hasID
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasID> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#hasPID> .
+_:genid12 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.iiitdwd.ac.in/ACB/COKPME#PID> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasID> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasID> <http://www.w3.org/2000/01/rdf-schema#comment> "Patient ID FOR REFERENCE. \nAdditionall added for teh dataset"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasID> <http://www.w3.org/2000/01/rdf-schema#label> "PID"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN> .
+_:genid13 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.iiitdwd.ac.in/ACB/COKPME#Phone> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone> <http://www.w3.org/2000/01/rdf-schema#comment> "Patient phone number provided during registration.\nIn case of husband wife the phone number is same in most of the cases."@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone> <http://www.w3.org/2000/01/rdf-schema#label> "hasPhone"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode
+<http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#ID> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#hasHID> .
+_:genid14 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.iiitdwd.ac.in/ACB/COKPME#ID> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode> <http://www.w3.org/2000/01/rdf-schema#comment> "Hospital ID - Assigned by KPME"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode> <http://www.w3.org/2000/01/rdf-schema#label> "HID"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#postalCode
+<http://www.iiitdwd.ac.in/ACB/COKPME#postalCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#postalCode> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.iiitdwd.ac.in/ACB/COKPME#address> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#postalCode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Location> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#postalCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate
+<http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#DateTimeDescription> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate> <http://www.w3.org/2000/01/rdf-schema#comment> "admitted for diagnosis"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate> <http://www.w3.org/2000/01/rdf-schema#label> "reportDate"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#streetAddress
+<http://www.iiitdwd.ac.in/ACB/COKPME#streetAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#streetAddress> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.iiitdwd.ac.in/ACB/COKPME#address> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#streetAddress> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.iiitdwd.ac.in/ACB/COKPME#Location> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#streetAddress> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#streetAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Street name" .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age
+<http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age> .
+_:genid15 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#decimal> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age> <http://www.w3.org/2000/01/rdf-schema#comment> "patient age is indicated in year and month"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age> <http://www.w3.org/2000/01/rdf-schema#label> "foaf:age"@en .
+# 
+# http://www.w3.org/2006/time#day
+<http://www.w3.org/2006/time#day> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.w3.org/2006/time#day> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate> .
+<http://www.w3.org/2006/time#day> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#DateTimeDescription> .
+<http://www.w3.org/2006/time#day> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+# 
+# http://www.w3.org/2006/time#month
+<http://www.w3.org/2006/time#month> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.w3.org/2006/time#month> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate> .
+<http://www.w3.org/2006/time#month> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#DateTimeDescription> .
+<http://www.w3.org/2006/time#month> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://www.w3.org/2006/time#year
+<http://www.w3.org/2006/time#year> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.w3.org/2006/time#year> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate> .
+<http://www.w3.org/2006/time#year> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#DateTimeDescription> .
+<http://www.w3.org/2006/time#year> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# http://xmlns.com/foaf/0.1/name
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://xmlns.com/foaf/0.1/name> .
+_:genid16 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/2000/01/rdf-schema#comment> "Patient name"@en .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/2000/01/rdf-schema#label> "foaf:name"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Age
+<http://www.iiitdwd.ac.in/ACB/COKPME#Age> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Age> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.iiitdwd.ac.in/ACB/COKPME#Patient> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Age> <http://www.w3.org/2000/01/rdf-schema#label> "Age"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect
+<http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing> .
+_:genid17 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect> <http://www.w3.org/2000/01/rdf-schema#comment> "Coronavirus disease course - Viral disease course that is the realization of some coronavirus disease and has as a participant a coronavirus." .
+<http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect> <http://www.w3.org/2000/01/rdf-schema#label> "COVID19Suspect"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect
+<http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory> .
+_:genid18 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.iiitdwd.ac.in/ACB/COKPME#Patient> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#ClinicalFindings
+<http://www.iiitdwd.ac.in/ACB/COKPME#ClinicalFindings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#ClinicalFindings> <http://www.w3.org/2000/01/rdf-schema#comment> "Initial diagnosis of patient by healthworkers."@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#ClinicalFindings> <http://www.w3.org/2000/01/rdf-schema#label> "Clinical findings"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition
+<http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.iiitdwd.ac.in/ACB/COKPME#ClinicalFindings> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "indicate a medical condition existing simultaneously but independently with another condition in a patient (source: Wikipedia)"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Comorbidity Condition"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis
+<http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis> <http://www.w3.org/2000/01/rdf-schema#comment> "Initial process carried when a patient visit the healthcare providers" .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis> <http://www.w3.org/2000/01/rdf-schema#label> "Diagnosis"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#District
+<http://www.iiitdwd.ac.in/ACB/COKPME#District> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#District> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#district> .
+_:genid19 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#District> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.iiitdwd.ac.in/ACB/COKPME#Hospital> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#District> <http://www.w3.org/2000/01/rdf-schema#comment> "District where hospital is located."@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#District> <http://www.w3.org/2000/01/rdf-schema#label> "District"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Hospital
+<http://www.iiitdwd.ac.in/ACB/COKPME#Hospital> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Hospital> <http://www.w3.org/2000/01/rdf-schema#comment> "Healthcare facility"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Hospital> <http://www.w3.org/2000/01/rdf-schema#comment> "Hospital"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#HospitalAddress
+<http://www.iiitdwd.ac.in/ACB/COKPME#HospitalAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#HospitalAddress> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.iiitdwd.ac.in/ACB/COKPME#Location> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#HospitalAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Hospital address reefer to the place. \nIn the ontology here we have 2 address-  Patient residence address and Hospital address"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#HospitalAddress> <http://www.w3.org/2000/01/rdf-schema#label> "HospitalAddress"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#ID
+<http://www.iiitdwd.ac.in/ACB/COKPME#ID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#ID> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.iiitdwd.ac.in/ACB/COKPME#Hospital> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#ID> <http://www.w3.org/2000/01/rdf-schema#comment> "Every hospital has ID assigned by the respective government authority.\nIt is unique across the karnataka state."@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#ID> <http://www.w3.org/2000/01/rdf-schema#label> "ID"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#ILI_category
+<http://www.iiitdwd.ac.in/ACB/COKPME#ILI_category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#ILI_category> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory> .
+_:genid20 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#ILI_category> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.iiitdwd.ac.in/ACB/COKPME#Patient> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#ILI_category> <http://www.w3.org/2000/01/rdf-schema#comment> "Patient categorized under ILI symptom"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#ILI_category> <http://www.w3.org/2000/01/rdf-schema#label> "ILI"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness
+<http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#Medicines_prescribed_with_home_quarantine_advice> .
+_:genid21 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness> <http://www.w3.org/2000/01/rdf-schema#comment> "Patients with fever and/or upper respiratory tract illness (Influenza\nLike Illness, ILI)"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness> <http://www.w3.org/2000/01/rdf-schema#label> "InfluenzaLikeIllness"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Location
+<http://www.iiitdwd.ac.in/ACB/COKPME#Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Location> <http://www.w3.org/2000/01/rdf-schema#comment> "Categorized into 2 parts\n1. PLocation - Patient Location\n2. HLocation -  Hospital/Clinic Location \n\nPatient address indicates the address provided during the registration \nHospital/clinic Location Indicates the respective hospital for which patient has visited to checkpup." .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Name
+<http://www.iiitdwd.ac.in/ACB/COKPME#Name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Name> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.iiitdwd.ac.in/ACB/COKPME#Hospital> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Name> <http://www.w3.org/2000/01/rdf-schema#comment> "Name"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Name> <http://www.w3.org/2000/01/rdf-schema#comment> "Name of the Hospital"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition
+<http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "Other Comorbidity conditions like fever, cough, BP, etc.,"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Other Comorbidity conditions"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#PID
+<http://www.iiitdwd.ac.in/ACB/COKPME#PID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#PID> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.iiitdwd.ac.in/ACB/COKPME#Patient> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#PID> <http://www.w3.org/2000/01/rdf-schema#comment> "Identification of Patient"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#PID> <http://www.w3.org/2000/01/rdf-schema#label> "PID" .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Patient
+<http://www.iiitdwd.ac.in/ACB/COKPME#Patient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Patient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Person> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Patient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo> .
+_:genid22 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.iiitdwd.ac.in/ACB/COKPME#Hospital> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Patient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory> .
+_:genid23 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Patient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor> .
+_:genid24 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Patient> <http://www.w3.org/2000/01/rdf-schema#comment> "Patient who is under diagnosis with symptoms of ILI/ SARI or FOR covid test"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Patient> <http://www.w3.org/2000/01/rdf-schema#label> "Patient"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress
+<http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.iiitdwd.ac.in/ACB/COKPME#Location> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Residential address/address provided by patient during diagnosis"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress> <http://www.w3.org/2000/01/rdf-schema#label> "PatientAddress"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Phone
+<http://www.iiitdwd.ac.in/ACB/COKPME#Phone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Phone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.iiitdwd.ac.in/ACB/COKPME#Patient> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Phone> <http://www.w3.org/2000/01/rdf-schema#label> "Phone"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#SARI_category
+<http://www.iiitdwd.ac.in/ACB/COKPME#SARI_category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#SARI_category> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory> .
+_:genid25 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#SARI_category> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.iiitdwd.ac.in/ACB/COKPME#Patient> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#SARI_category> <http://www.w3.org/2000/01/rdf-schema#comment> "Patient categorized under SARI"@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#SARI_category> <http://www.w3.org/2000/01/rdf-schema#label> "SARI"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection
+<http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#Shift_to_other_hospital> .
+_:genid26 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection> <http://www.w3.org/2000/01/rdf-schema#comment> "\"Severe Pneumonia (with respiratory rate ≥30/minute and/or SpO2 < 90% in room air) or ARDS or Septic shock."@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection> <http://www.w3.org/2000/01/rdf-schema#label> "SeverAcuteRespiratoryInfection"@en .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Treatment
+<http://www.iiitdwd.ac.in/ACB/COKPME#Treatment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Treatment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.iiitdwd.ac.in/ACB/COKPME#Hospital> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Treatment> <http://www.w3.org/2000/01/rdf-schema#comment> "Treatment provided to teh patient by the respective hospital."@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Treatment> <http://www.w3.org/2000/01/rdf-schema#label> "Treatment"@en .
+# 
+# http://www.w3.org/2006/time#DateTimeDescription
+<http://www.w3.org/2006/time#DateTimeDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2006/time#DateTimeDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid27 <http://www.w3.org/2002/07/owl#onProperty> <http://www.iiitdwd.ac.in/ACB/COKPME#reported_On> .
+_:genid27 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2006/time#DateTimeDescription> .
+<http://www.w3.org/2006/time#DateTimeDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "This refers to the patient admitted or diagnoised data and time"@en .
+<http://www.w3.org/2006/time#DateTimeDescription> <http://www.w3.org/2000/01/rdf-schema#label> "AdmittedDate"@en .
+# 
+# http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/2000/01/rdf-schema#comment> "An agent is person,  or physical artifact"@en .
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/2000/01/rdf-schema#label> "Agent"@en .
+# 
+# http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#comment> "Patient / Human"@en .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#ASYMPTOMATIC
+<http://www.iiitdwd.ac.in/ACB/COKPME#ASYMPTOMATIC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#ASYMPTOMATIC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Acidity
+<http://www.iiitdwd.ac.in/ACB/COKPME#Acidity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Acidity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#AcuteRespiratoryDistressSyndrome
+<http://www.iiitdwd.ac.in/ACB/COKPME#AcuteRespiratoryDistressSyndrome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#AcuteRespiratoryDistressSyndrome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Anemia
+<http://www.iiitdwd.ac.in/ACB/COKPME#Anemia> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Anemia> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Bagalkot
+<http://www.iiitdwd.ac.in/ACB/COKPME#Bagalkot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Bangalore_Rural
+<http://www.iiitdwd.ac.in/ACB/COKPME#Bangalore_Rural> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Bangalore_Urban
+<http://www.iiitdwd.ac.in/ACB/COKPME#Bangalore_Urban> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Belgaum
+<http://www.iiitdwd.ac.in/ACB/COKPME#Belgaum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Breathlessness
+<http://www.iiitdwd.ac.in/ACB/COKPME#Breathlessness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Breathlessness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#BronchialAsthma
+<http://www.iiitdwd.ac.in/ACB/COKPME#BronchialAsthma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#BronchialAsthma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#COLUMBIA_ASIA_HOSPITAL_HEBBAL
+<http://www.iiitdwd.ac.in/ACB/COKPME#COLUMBIA_ASIA_HOSPITAL_HEBBAL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#COPD
+<http://www.iiitdwd.ac.in/ACB/COKPME#COPD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#COPD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect
+<http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing
+<http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Cold
+<http://www.iiitdwd.ac.in/ACB/COKPME#Cold> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Cold> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Cough
+<http://www.iiitdwd.ac.in/ACB/COKPME#Cough> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Cough> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#DIARRHOEA
+<http://www.iiitdwd.ac.in/ACB/COKPME#DIARRHOEA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#DIARRHOEA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Diabetic
+<http://www.iiitdwd.ac.in/ACB/COKPME#Diabetic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Diabetic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#DryCough
+<http://www.iiitdwd.ac.in/ACB/COKPME#DryCough> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#DryCough> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#ExpectorationBreathlessness
+<http://www.iiitdwd.ac.in/ACB/COKPME#ExpectorationBreathlessness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#ExpectorationBreathlessness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Fever
+<http://www.iiitdwd.ac.in/ACB/COKPME#Fever> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Fever> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#FeverCough
+<http://www.iiitdwd.ac.in/ACB/COKPME#FeverCough> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#FeverCough> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#FeverCoughWheezing
+<http://www.iiitdwd.ac.in/ACB/COKPME#FeverCoughWheezing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#FeverCoughWheezing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessBodyacheEpigastricPain
+<http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessBodyacheEpigastricPain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessBodyacheEpigastricPain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessPainAbdomen
+<http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessPainAbdomen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessPainAbdomen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#H16472
+<http://www.iiitdwd.ac.in/ACB/COKPME#H16472> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Heart_Disease
+<http://www.iiitdwd.ac.in/ACB/COKPME#Heart_Disease> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Heart_Disease> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Hypertension
+<http://www.iiitdwd.ac.in/ACB/COKPME#Hypertension> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Hypertension> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#HypoThyorid
+<http://www.iiitdwd.ac.in/ACB/COKPME#HypoThyorid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#HypoThyorid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#ILI
+<http://www.iiitdwd.ac.in/ACB/COKPME#ILI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#ILI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#LooseStoolsAssoicatedWithFever
+<http://www.iiitdwd.ac.in/ACB/COKPME#LooseStoolsAssoicatedWithFever> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#LooseStoolsAssoicatedWithFever> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#NIL
+<http://www.iiitdwd.ac.in/ACB/COKPME#NIL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#NIL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Other
+<http://www.iiitdwd.ac.in/ACB/COKPME#Other> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Other> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Other> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#PNEUMONIA
+<http://www.iiitdwd.ac.in/ACB/COKPME#PNEUMONIA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#PNEUMONIA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#PneumoniawithLRTI
+<http://www.iiitdwd.ac.in/ACB/COKPME#PneumoniawithLRTI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#PneumoniawithLRTI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Screaming
+<http://www.iiitdwd.ac.in/ACB/COKPME#Screaming> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#Screaming> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#ViralFever
+<http://www.iiitdwd.ac.in/ACB/COKPME#ViralFever> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#ViralFever> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001
+<http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#Patient> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001> <http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo> <http://www.iiitdwd.ac.in/ACB/COKPME#COLUMBIA_ASIA_HOSPITAL_HEBBAL> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001> <http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo> <http://www.iiitdwd.ac.in/ACB/COKPME#H16472> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001> <http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory> <http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001> <http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions> <http://www.iiitdwd.ac.in/ACB/COKPME#forCovidTest> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001> <http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing> "" .
+<http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001> <http://www.iiitdwd.ac.in/ACB/COKPME#hasID> "XXXX00000001" .
+<http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001> <http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone> "9900990099" .
+<http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001> <http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode> "H16472" .
+<http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001> <http://www.w3.org/2006/time#month> "March" .
+<http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001> <http://xmlns.com/foaf/0.1/name> "Ram Gopal" .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#forCovidTest
+<http://www.iiitdwd.ac.in/ACB/COKPME#forCovidTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#forCovidTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition> .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#2147483647
+<http://www.iiitdwd.ac.in/ACB/COKPME#2147483647> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#2147483647> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iiitdwd.ac.in/ACB/COKPME#Phone> .
+<http://www.iiitdwd.ac.in/ACB/COKPME#2147483647> <http://www.w3.org/2000/01/rdf-schema#label> "2147483647" .
+# 
+# http://www.iiitdwd.ac.in/ACB/COKPME#Covid-19_(Suspect)
+<http://www.iiitdwd.ac.in/ACB/COKPME#Covid-19_(Suspect)> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect> <http://www.w3.org/2000/01/rdf-schema#comment> "Person who is categorized as COVID Suspect."@en .
+<http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect> <http://www.w3.org/2000/01/rdf-schema#label> "COVIDTest"@en .
+# 
+<http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing> <http://www.w3.org/2000/01/rdf-schema#label> "Call_to_Emergency_108_for_Covid-19_testing"@en .
+# 
+# Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

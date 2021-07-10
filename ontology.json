@@ -1,0 +1,1288 @@
+[ {
+  "@id" : "_:genid1",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo"
+  } ]
+}, {
+  "@id" : "_:genid12",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasPID"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#PID"
+  } ]
+}, {
+  "@id" : "_:genid13",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Phone"
+  } ]
+}, {
+  "@id" : "_:genid14",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasHID"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#ID"
+  } ]
+}, {
+  "@id" : "_:genid15",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ]
+}, {
+  "@id" : "_:genid16",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/name"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "_:genid17",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "_:genid18",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect"
+  } ]
+}, {
+  "@id" : "_:genid19",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#district"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "_:genid2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress"
+  } ]
+}, {
+  "@id" : "_:genid20",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness"
+  } ]
+}, {
+  "@id" : "_:genid21",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Medicines_prescribed_with_home_quarantine_advice"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "_:genid22",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Hospital"
+  } ]
+}, {
+  "@id" : "_:genid23",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"
+  } ]
+}, {
+  "@id" : "_:genid24",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"
+  } ]
+}, {
+  "@id" : "_:genid25",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection"
+  } ]
+}, {
+  "@id" : "_:genid26",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Shift_to_other_hospital"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "_:genid27",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#reported_On"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2006/time#DateTimeDescription"
+  } ]
+}, {
+  "@id" : "_:genid3",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "_:genid4",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "_:genid5",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#address"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "_:genid6",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Hospital"
+    }, {
+      "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Patient"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid9",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#District"
+    }, {
+      "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Location"
+    } ]
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/date",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/dc/elements/1.1/date"
+  }, {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#designedFor"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@language" : "en",
+    "@value" : "Abhilash C B (IIIT Dharwad)"
+  }, {
+    "@language" : "en",
+    "@value" : "Kavi Mahesh (IIIT Dharwad)"
+  } ],
+  "http://purl.org/dc/elements/1.1/date" : [ {
+    "@language" : "en",
+    "@value" : "July 2021"
+  } ],
+  "http://purl.org/dc/elements/1.1/publisher" : [ {
+    "@language" : "en",
+    "@value" : "IIIT Dharwad"
+  } ],
+  "http://purl.org/dc/elements/1.1/title" : [ {
+    "@language" : "en",
+    "@value" : "COKPME - COVID19 Ontology for analysing Karnataka Private Medical Establishment data"
+  } ],
+  "http://www.iiitdwd.ac.in/ACB/COKPME#designedFor" : [ {
+    "@language" : "en",
+    "@value" : "The ontology will be used by analyst for finding the relative and precautionary measures that can be put in action for controlling the spread. Also, it should be able to handle the competence question like: \n Which properties of the patient should be considered for modeling\n Which properties of patient changes\n Which properties of patient confirms COVID positive\n Do the symptom of patient changes over a time ***\n Do the treatment provided depends on the category of patient\n Does other comorbid conditions derive any interestingness ****\n Which symptom is high in a particular district? (Or) Does the geographical location influence the patient category \nThese keep change over an iterative process of ontology development"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "This is for analyzing the wave 2 of COVID19. \n\nDateset - Anonymised sample data for testing the ontology. \n\nThis is the evaluation version.\n\nThe ontology will be used by analysts for finding the relative and precautionary measures that can be put in action for controlling the spread. Also, it should be able to handle the competence question like: \n Which properties of the patient should be considered for modeling\n Which properties of patient changes\n Which properties of patient confirm COVID positive\n Do the symptom of the patient change over a time ***\n Do the treatment provided depends on the category of patient\n Do other comorbid conditions derive any interestingness ****\n Which symptom is high in a particular district? (Or) Does the geographical location influence the patient category \nThese keep change over an iterative process of ontology development"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "COVID19 ontology for KARNATAKA PRIVATE MEDICAL ESTABLISHMENTS - KPME. \nThe Ontology captures the attributes capted in all the private clinics of karnataka state for analysis teh pandemic situation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@language" : "en",
+    "@value" : "CODO - Ontology for collection and analysis of COVID-19 data.\nThis is generalized for COVID19 DATA. \nlINK: https://www.isibang.ac.in/ns/codo/index.html\n\n\nDutta, B. and DeBellis, M. (2020). CODO: CODO: an ontology for collection and analysis of COVID-19 data. In Proc. of 12th Int. Conf. on Knowledge Engineering and Ontology Development (KEOD), 2-4 November 2020 (accepted)"
+  } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "http://purl.org/NET/dc_owl2dl/terms"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@language" : "en",
+    "@value" : "1.0"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#2147483647",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#Phone" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "2147483647"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#ASYMPTOMATIC",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Acidity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#AcuteRespiratoryDistressSyndrome",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Age",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Age"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Patient"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Anemia",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Bagalkot",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Bangalore_Rural",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Bangalore_Urban",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Belgaum",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Breathlessness",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#BronchialAsthma",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#COLUMBIA_ASIA_HOSPITAL_HEBBAL",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#COPD",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#COVID-19_Suspect",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Coronavirus disease course - Viral disease course that is the realization of some coronavirus disease and has as a participant a coronavirus."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "COVID19Suspect"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid17"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Person who is categorized as COVID Suspect."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "COVIDTest"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Patient"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid18"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Patient"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Call_to_Emergency_108_for_Covid-19_testing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#ClinicalFindings",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Initial diagnosis of patient by healthworkers."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Clinical findings"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Cold",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "indicate a medical condition existing simultaneously but independently with another condition in a patient (source: Wikipedia)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Comorbidity Condition"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#ClinicalFindings"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Cough",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Covid-19_(Suspect)",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#DIARRHOEA",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Diabetic",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Initial process carried when a patient visit the healthcare providers"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Diagnosis"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#District",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "District where hospital is located."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "District"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Hospital"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid19"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#DryCough",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#ExpectorationBreathlessness",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Fever",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#FeverCough",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#FeverCoughWheezing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessBodyacheEpigastricPain",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#FeverWeaknessPainAbdomen",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#H16472",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Heart_Disease",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Hospital",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Healthcare facility"
+  }, {
+    "@language" : "en",
+    "@value" : "Hospital"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#HospitalAddress",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Hospital address reefer to the place. \nIn the ontology here we have 2 address-  Patient residence address and Hospital address"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "HospitalAddress"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Location"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Hypertension",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#HypoThyorid",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#ID",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Every hospital has ID assigned by the respective government authority.\nIt is unique across the karnataka state."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ID"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Hospital"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#ILI",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#ILI_category",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Patient categorized under ILI symptom"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ILI"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Patient"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid20"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Influenza_Like_Illness",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Patients with fever and/or upper respiratory tract illness (Influenza\nLike Illness, ILI)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "InfluenzaLikeIllness"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid21"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Location",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Categorized into 2 parts\n1. PLocation - Patient Location\n2. HLocation -  Hospital/Clinic Location \n\nPatient address indicates the address provided during the registration \nHospital/clinic Location Indicates the respective hospital for which patient has visited to checkpup."
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#LooseStoolsAssoicatedWithFever",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Medicines_prescribed_with_home_quarantine_advice",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Patient"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Medicines_prescribed_with_home_quarantine_advice"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#NIL",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Name",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Name"
+  }, {
+    "@language" : "en",
+    "@value" : "Name of the Hospital"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Hospital"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Other",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Other Comorbidity conditions like fever, cough, BP, etc.,"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Other Comorbidity conditions"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#ComorbidityCondition"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#PID",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Identification of Patient"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "PID"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Patient"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#PNEUMONIA",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Patient",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Patient who is under diagnosis with symptoms of ILI/ SARI or FOR covid test"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Patient"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Person"
+  }, {
+    "@id" : "_:genid22"
+  }, {
+    "@id" : "_:genid23"
+  }, {
+    "@id" : "_:genid24"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Residential address/address provided by patient during diagnosis"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "PatientAddress"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Location"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Phone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Phone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Patient"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#PneumoniawithLRTI",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#SARI_category",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Patient categorized under SARI"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "SARI"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Patient"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid25"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Screaming",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Sever_Acute_Respiratory_Infection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "\"Severe Pneumonia (with respiratory rate ≥30/minute and/or SpO2 < 90% in room air) or ARDS or Septic shock."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "SeverAcuteRespiratoryInfection"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid26"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Shift_to_other_hospital",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Patient"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Shift_to_other_hospital"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Treatment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Treatment provided to teh patient by the respective hospital."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Treatment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Hospital"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#ViralFever",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#XXXX00000001",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#Patient" ],
+  "http://www.iiitdwd.ac.in/ACB/COKPME#Call_to_Emergency_108_for_Covid-19_testing" : [ {
+    "@value" : ""
+  } ],
+  "http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#COLUMBIA_ASIA_HOSPITAL_HEBBAL"
+  }, {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#H16472"
+  } ],
+  "http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#COVID19Suspect"
+  } ],
+  "http://www.iiitdwd.ac.in/ACB/COKPME#hasID" : [ {
+    "@value" : "XXXX00000001"
+  } ],
+  "http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone" : [ {
+    "@value" : "9900990099"
+  } ],
+  "http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode" : [ {
+    "@value" : "H16472"
+  } ],
+  "http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#forCovidTest"
+  } ],
+  "http://www.w3.org/2006/time#month" : [ {
+    "@value" : "March"
+  } ],
+  "http://xmlns.com/foaf/0.1/name" : [ {
+    "@value" : "Ram Gopal"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#address",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Address comes with the locality, pin code and street address"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Location"
+  }, {
+    "@id" : "_:genid6"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "address"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#addressLocality",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Indicates teh district or taluk"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Location"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "addressLocality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#address"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#area",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Particluar area of district or taluk"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#address"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#designedFor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Diagnoised For ILI / COVID suspect / SARI"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "diagnoisedFor"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#district",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "District name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid9"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "district"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#address"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#foaf:age",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "patient age is indicated in year and month"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid15"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "foaf:age"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#forCovidTest",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedPatient",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "refers to teh hsospital where patient sis admitted for diagnosis"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Hospital"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hasAdmittedPatient"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasAdmittedTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Has Admitted hospital for COVID DIAGNOSIS"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Hospital"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hasAdmittedTo"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo"
+  }, {
+    "@id" : "_:genid1"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Category refere to 3 type :\n1. COVID Suspect\n2. ILI\n3. SARI"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hasCategory"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasDiagnoisedFor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Has Diagnoised ILI/ SARI/ COVID"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hasDiagnoisedFor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasHID",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasID",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Patient ID FOR REFERENCE. \nAdditionall added for teh dataset"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid12"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "PID"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasPAddress",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid2"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasPID",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Every patient is assigned with the ID number as anonymize  process"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Patient"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hasPID"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasPhone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Patient phone number provided during registration.\nIn case of husband wife the phone number is same in most of the cases."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid13"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hasPhone"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasPhoneN",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Phone number is point of reference for patient. Along with the PID we can use patient phone number for processing data"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Patient"
+  }, {
+    "@id" : "_:genid3"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid4"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasSymptom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The symptom of patient is referred"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Patient"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hasSymptom"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hasdistrict",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "DIstrict has all teh name of karnataks state district as instances."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "hasDistrict"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#hospitalCode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Hospital ID - Assigned by KPME"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#ID"
+  }, {
+    "@id" : "_:genid14"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "HID"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#isAdmittedTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Patient admitted to the hospital for COVID TEST AND DIAGNOSIS"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "isAdmittedTo"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#isDiagnoisedFor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Inverse of Has Diagnoised For"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Diagnosis"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Is Diagnoised For"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#diagnoisedFor"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#isLocatedAt",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#PatientAddress"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid5"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#otherComorbidConditions",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Refers to other comorbid contion that patient has. previous medical history or others health issue in parallel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Patient"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "otherComorbidConditions"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#postalCode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Location"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#address"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "admitted for diagnosis"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2006/time#DateTimeDescription"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "reportDate"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#reported_On",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Date on which he is diagnoised or called for COVID TEST"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2006/time#DateTimeDescription"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "reportedOn"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#streetAddress",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Street name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Location"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#address"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#sufferFrom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Suffer from other comorbid conditions"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#OtherComorbidityCondition"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "sufferFrom"
+  } ]
+}, {
+  "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#treatmentProvided",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#Treatment"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2006/time#DateTimeDescription",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "This refers to the patient admitted or diagnoised data and time"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "AdmittedDate"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "_:genid27"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2006/time#day",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2006/time#DateTimeDescription"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2006/time#month",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2006/time#DateTimeDescription"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2006/time#year",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2006/time#DateTimeDescription"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.iiitdwd.ac.in/ACB/COKPME#reportedDate"
+  } ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/Agent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An agent is person,  or physical artifact"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Agent"
+  } ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Patient / Human"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Agent"
+  } ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/name",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Patient name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid16"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "foaf:name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+} ]

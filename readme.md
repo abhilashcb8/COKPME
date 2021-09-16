@@ -1,3 +1,15 @@
+About COKPME
+===================
+The COKPME ontology is designed for analysing teh karnataka state COVID-19 data and take preventive measures. 
+The ontology is tested and evaluated under different criterias.
+
+The content of the implementation will be uploaded after the paper of published.
+
+The interestingness from the COVID-19 data using COKPME ontology can be analysed. 
+
+
+
+
 About Widoco output
 ===================
 The purpose of Widoco is to reuse and integrate existing tools for documentation, plus the set of features listed below:

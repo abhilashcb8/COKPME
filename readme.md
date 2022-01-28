@@ -1,3 +1,10 @@
+The COP Ontology results and code alsong with sample data is available in below link:
+
+
+
+
+
+
 About COKPME
 ===================
 The COKPME ontology is designed for analysing teh karnataka state COVID-19 data and take preventive measures. 
